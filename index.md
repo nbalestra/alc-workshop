@@ -4,6 +4,7 @@
 
 layout: home
 title: Home
+description: The API-Led connectivity workshop is a hands-on workshop that will help you understand how to design, build, secure, and manage APIs using MuleSoft Anypoint Platform.
 nav_enabled: true
 nav_order: 1
 ---
@@ -19,7 +20,7 @@ Securely build an application network of exponential value, unlocking new busine
 
 IT feels the responsibility to enable the entire enterprise to participate in the digital transformation initiative. Collectively, the enterprise needs to create and maintain what we call an application network. This application network allows organizations to develop, connect and disconnect applications and services as easily as it does with mobile devices. IT must establish composable capabilities to build and enhance these applications as part of a network topology that promotes security and re-use. The core of this capability is a "market" for the production and consumption of these secure and reusable application "assets". MuleSoft’s Anypoint Platform supports this composable enterprise approach.
 
-![Business Transformation](./assets/images/business-transformation.png "Business Transformation")
+![Business Transformation](./assets/images/home/business-transformation.png "Business Transformation")
 
 ## Innovate faster in the Anypoint Platform to integrate, manage, monitor, secure and automate key capabilities
 
@@ -29,13 +30,13 @@ With the Anypoint Platform, organizations are empowered to produce and share the
 
 Given the significance of these changes, it’s important to know that the Anypoint Platform supports making the change in it’s IT operating model by establishing an application network in an incremental way. A major component of an incremental approach is the adoption of these APIs as the way to connect most of the applications. APIs help to decouple systems and processes, and shield any development changes that may occur in the backend without impact on its upstream systems. Another major element is the ability to implement APIs with a microservices-led methodology that are themselves API consumers. All of these APIs can be made available within the enterprise in a lightly governed way by leveraging the Anypoint Exchange. All of these APIs can be categorized or tagged within Exchange. This makes it easy for those developing new functionality to find and reuse as much as possible from existing APIs. These ideas make up what we call an Application Network which ties into MuleSoft’s Composable Connected Business methodology
 
-![Composable Business](./assets/images/composable-business.png "Composable Business")
+![Composable Business](./assets/images/home/composable-business.png "Composable Business")
 
 ## Gain incremental application network delivery through Composable Connected Business
 
 In this workshop, we will look at using the Anypoint Platform to incrementally deliver the application network through API-led methodology. We will learn how to design and implement APIs that a mobile application will use for submitting orders and checking order status, which underneath the covers, will connect to and orchestrate a variety of enterprise systems including legacy order processing databases, ERP applications, messaging queues, SaaS and cloud applications. All these systems will be part of a larger composable network of services that allows for scale, security, and reuse.
 
-![Composable Network](./assets/images/composable-network.png "Composable Network")
+![Composable Network](./assets/images/home/composable-network.png "Composable Network")
 
 ## Unlock data with the help of API building blocks
 
@@ -47,4 +48,4 @@ If various components are wrapped in APIs that can be easily discovered, underst
 
 This is what we call an “API-led Composable Network.” By using a modern API-led approach, each integration becomes a reusable building block.
 
-![Composability](./assets/images/composability.png "Composability")
+![Composability](./assets/images/home/composability.png "Composability")
