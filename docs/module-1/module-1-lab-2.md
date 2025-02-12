@@ -4,7 +4,11 @@ title: Lab 2 - Design the Omni Channel API
 nav_order: 3
 ---
 
+1. TOC
+{:toc}
+
 # Lab 2: Design the Omni Channel API
+{: .no_toc }
 
 # Overview
 

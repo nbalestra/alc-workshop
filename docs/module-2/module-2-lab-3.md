@@ -3,8 +3,12 @@ parent: Module 2 - API Implementation
 title: "Lab 3"
 nav_order: 3
 ---
+1. TOC
+{:toc}
+
 
 # Lab 3: Deploy the Omni Channel API implementation
+{: .no_toc }
 
 ## Overview
 

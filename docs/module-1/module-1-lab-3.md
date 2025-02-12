@@ -3,8 +3,11 @@ parent: Module 1 - API Design
 title: Lab 3 - Publish the Omni Channel API to Exchange
 nav_order: 4
 ---
+1. TOC
+{:toc}
 
 # Lab 3: Publish the Omni Channel API to Exchange
+{: .no_toc }
 
 ## Overview
 In Lab 1 we examined how to use **Anypoint Exchange** to facilitate the API discovery process. In Lab 2 we learned how to use **Anypoint Design Center** to design the specifications for a modern RESTful API. In this lab we will learn how to publish our API to **Anypoint Exchange** so that API consumers and API developers within the organization are able to leverage the API through "self-service".

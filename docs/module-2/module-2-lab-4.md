@@ -4,7 +4,12 @@ title: "Lab 4: (Optional)"
 nav_order: 4
 assets: "../../assets/images/module2/lab4/"
 ---
+
+1. TOC
+{:toc}
+
 # Lab 4: (Optional) Explore Exchange for Complete System, Process and Experience APIs
+{: .no_toc }
 
 ## Overview
 

@@ -3,8 +3,11 @@ parent: Module 2 - API Implementation
 title: "Lab 2"
 nav_order: 2
 ---
+1. TOC
+{:toc}
 
 # Lab 2: Download the complete Omni Channel project
+{: .no_toc }
 
 ## Overview
 

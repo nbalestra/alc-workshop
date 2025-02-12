@@ -4,7 +4,13 @@ title: Lab 1 - Search for an API in Exchange
 nav_order: 2
 ---
 
-# Overview
+1. TOC
+{:toc}
+
+# Lab 1 - Search for an API in Exchange
+{: .no_toc }
+
+## Overview
 
 API’s are the reusable assets that simplify and accelerate the creation of modern software applications. As a Mulesoft developer you will need to consume API’s created by other members of the organization and publish new API’s for others to consume. This new consumption model is the foundation of a new approach for delivering software solutions where API’s form the building blocks of the modern enterprise.
 
