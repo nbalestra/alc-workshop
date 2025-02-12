@@ -1,6 +1,6 @@
 ---
 parent: Module 2 - API Implementation
-title: "Lab 2"
+title: "Lab 2: Download the complete Omni Channel project"
 nav_order: 2
 ---
 1. TOC

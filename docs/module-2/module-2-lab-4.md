@@ -1,6 +1,6 @@
 ---
 parent: Module 2 - API Implementation
-title: "Lab 4: (Optional)"
+title: "(Optional) Lab 4: Explore Exchange for Complete System, Process and Experience APIs"
 nav_order: 4
 assets: "../../assets/images/module2/lab4/"
 ---

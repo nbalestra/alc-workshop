@@ -1,6 +1,6 @@
 ---
 parent: Module 2 - API Implementation
-title: "Lab 1"
+title: "Lab 1: Implement the Omni Channel API in Studio"
 nav_order: 1
 ---
 1. TOC
@@ -93,7 +93,7 @@ In this step we will create a new Mule application in Anypoint Studio from the O
 
 
 
-### api-main
+**api-main**
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_8_apikit_main.png" width="150px">
 
@@ -107,7 +107,7 @@ Inside the api-main flow also an [Error-Handling](https://mule4-docs.mulesoft.co
 
 ---
 
-### put:\users\user\\\{user_id\}\shopping_cart
+**put:\users\user\\\{user_id\}\shopping_cart**
 
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_9_apikit_put_user_shopping_cart.png" width="230px">
@@ -117,7 +117,7 @@ This flow puts an item into a users shopping cart based on the user id. This put
 
 ---
 
-### get:\orders\order\\\{order_id\}
+**get:\orders\order\\\{order_id\}**
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_10_apikit_get_order_by_id.png" width="230px">
 
@@ -125,7 +125,7 @@ This flow puts an item into a users shopping cart based on the user id. This put
 This flow gets an order based on an order id
 
 ---
-### get:\products\product\\\{product_id\}
+**get:\products\product\\\{product_id\}**
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_11_apikit_get_product_by_id.png" width="230px">
 
@@ -133,7 +133,7 @@ This flow gets a product based on a product id
 
 ---
 
-### get:\orders\search
+**get:\orders\search**
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_12_apikit_get_order_search.png" width="230px">
 
@@ -141,13 +141,14 @@ This flow returns orders based on search criteria
 
 ---
 
-### get:\products\search
+**get:\products\search**
+
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_13_apikit_get_product_search.png" width="230px">
 
 This flow returns products based on a search criteria
 
 ---
-### get:\users\user\\\{user_id\}\shopping_cart
+**get:\users\user\\\{user_id\}\shopping_cart**
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_14_apikit_get_user_shopping_cart.png" width="230px">
 
@@ -156,7 +157,7 @@ This flow returns all the items in a users shopping cart based on a user id
 
 ---
 
-### post:\users\user\\\{user_id\}\shopping_cart\confirmation
+**post:\users\user\\\{user_id\}\shopping_cart\confirmation**
 
 <img src="../../assets/images/module2/lab1/module2_lab1_step1_15_apikit_post_shopping_cart_confirm.png" width="230px">
 
