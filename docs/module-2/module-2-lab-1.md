@@ -1,6 +1,6 @@
 ---
 parent: Module 2 - API Implementation
-title: "Lab 1: Implement the Omni Channel API in Studio"
+title: "Lab 1"
 nav_order: 1
 ---
 
@@ -218,4 +218,4 @@ It is important to note that the implementation of an API is a real MuleSoft app
 
 **Congratulations! You have completed Lab 1.**
 
-Please proceed to Lab 2
+Please proceed to [Lab 2](./module-2-lab-2){: .btn .btn-blue  .mr-2  }
