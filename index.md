@@ -9,7 +9,7 @@ nav_enabled: true
 nav_order: 1
 ---
 
-![Head Image](./assets/images/header-intro.png "Header Intro")
+![Head Image](./assets/images/header-intro-2.png "Header Intro")
 
 ## Organizations of the future will be composable
 {: .fs-9 }
