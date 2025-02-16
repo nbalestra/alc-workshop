@@ -2,7 +2,7 @@
 parent: Module 3 - Salesforce Integration
 title: "Lab 3: Run the Mule app from Anypoint Studio"
 nav_order: 3
-assets: "../../assets/images/module-3-sf/lab3/"
+assets: "../../assets/images/module3-sf/lab3/"
 ---
 1. TOC
 {:toc}

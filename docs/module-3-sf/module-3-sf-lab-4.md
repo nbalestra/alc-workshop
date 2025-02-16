@@ -2,7 +2,7 @@
 parent: Module 3 - Salesforce Integration
 title: "Lab 4: (Optional) Error Handling"
 nav_order: 3
-assets: "../../assets/images/module-3-sf/lab4/"
+assets: "../../assets/images/module3-sf/lab4/"
 ---
 1. TOC
 {:toc}

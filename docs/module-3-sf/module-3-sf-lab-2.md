@@ -2,7 +2,7 @@
 parent: Module 3 - Salesforce Integration
 title: "Lab 2: Implement the customer creation logic"
 nav_order: 2
-assets: "../../assets/images/module-3-sf/lab2/"
+assets: "../../assets/images/module3-sf/lab2/"
 ---
 1. TOC
 {:toc}

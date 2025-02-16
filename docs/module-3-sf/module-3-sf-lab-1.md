@@ -2,7 +2,7 @@
 parent: Module 3 - Salesforce Integration
 title: "Lab 1: Import the RAML Definition into Studio"
 nav_order: 1
-assets: "../../assets/images/module-3-sf/lab1/"
+assets: "../../assets/images/module3-sf/lab1/"
 ---
 1. TOC
 {:toc}
