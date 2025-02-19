@@ -37,6 +37,8 @@ Now that we have tested our agent within Studio, is time to deploy it to Anypoin
 
     ![]({{ page.assets }}module-4-lab-2-copy-endpoint.png)
 
+# Step 2 - Put your agent to work for you
+
 6. Now open the [Agent UI application](https://tinyurl.com/alc-ai-agent)
 
 7. Paste your public endpoint in the **Agent UR** text box that you will find at the top of the page

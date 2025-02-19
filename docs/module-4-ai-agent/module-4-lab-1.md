@@ -85,7 +85,7 @@ Similarly to what you have already done in Module 2, we will create an API scaff
 
     ![]({{ page.assets }}module4-lab1-new-file.png)
 
-5. name the file `mule-chain.json` and click on **Finish**
+5. Name the file `mule-chain.json` and click on **Finish**
 6. Paste the following content in the newly created file:
 
     ```json

@@ -47,8 +47,8 @@ logo: /assets/images/mule-logo.png
 #Theme configuration: https://just-the-docs.com/docs/configuration/
 
 aux_links:
-  "Just the Docs on GitHub":
-    - "//github.com/just-the-docs/just-the-docs"
+  "MuleSoft":
+    - "https://www.mulesoft.com"
 
 search_enabled: true
 
@@ -81,8 +81,8 @@ enable_copy_code_button: true
 heading_anchors: true
 
 nav_external_links:
-  - title: Just the Docs on GitHub
-    url: https://github.com/just-the-docs/just-the-docs
+  - title: MuleSoft
+    url: https://www.mulesoft.com
 
 nav_error_report: true
 
