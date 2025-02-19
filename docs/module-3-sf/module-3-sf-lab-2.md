@@ -79,9 +79,9 @@ It’s a good practice to create a configuration file to hold all the parametriz
 
 ```yaml
 sfdc:
-  username: "workshop_mythical_lab@salesforce.com"
-  password: "Muley4545!"
-  securityToken: "DCjmVpHJnMw14C4Vrrd6oLwA"
+  username: "<WILL BE PROVIDED>"
+  password: "<WILL BE PROVIDED"
+  securityToken: "<WILL BE PROVIDED"
 ```
 
     ![]({{ page.assets }}module3_lab2_sfdc_properties.png)
@@ -121,7 +121,7 @@ sfdc:
 
 5. Press **OK** (2 times).
 
-6. Click the <img src="{{ page.assets }}module3_lab2_save_all_button (1).png" width="25px"> **Save All** button.
+6. Click the <img src="{{ page.assets }}module3_lab2_save_all_button.png" width="25px"> **Save All** button.
 
 ## Step 4: Create an Account
 

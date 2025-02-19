@@ -2,6 +2,7 @@
 parent: Module 1 - API Design
 title: Lab 2 - Design the Omni Channel API
 nav_order: 3
+assets: "../../assets/images/module1/lab2/"
 ---
 
 1. TOC
@@ -18,7 +19,7 @@ Anypoint Platform provides first-class tooling to support the needs of the API D
 
 For the purposes of this workshop we will design new API’s using REST. RESTful API’s are very popular right now and support a variety of patterns that help solve many reliability, scalability and integration challenges you might face. We will use an API-first design approach using the RESTful API Modeling Language (RAML) standard. We will follow REST best practices to promote adoption to your consumers. This lab will also introduce the main concepts of resource oriented design and will show how RAML is used to bring APIs to life. For more information on RAML, please see: [www.raml.org](https://www.raml.org).
 
-![Experience API](../../assets/images/module1/module1_lab2_experience_api.png "Experience API")
+![Experience API]({{ page.assets }}module1_lab2_experience_api.png "Experience API")
 
 In this lab, we will start designing a new REST API and test it before implementing it. We will use Anypoint Platform’s **Design Center** to design the API. We will then use **Anypoint Exchange** to search and find data definitions and examples published across the organization that enable us to standardize on common data elements. Lastly, we will utilize the **Mocking Service** to unlock resource dependencies of your API design. This significantly cuts down the time spent building the omni-channel application by turning the RAML design over to the omni-channel developers immediately and adopting a rapid prototyping style. Developers can utilize the mocked up API capabilities to produce a "working" application that calls the Mocking Service.
 
@@ -129,22 +130,23 @@ Let’s design these now in RAML.
 In this step, you will create an API and design it using the Anypoint Design Center.
 
 1. You can access Anypoint Design Center from the home page of Anypoint Platform:
-    ![Design Center](../../assets/images/module1/module1_lab2_anypoint_home.png "Design Center")
+    ![Design Center]({{ page.assets }}module1_lab2_anypoint_home.png "Design Center")
 
     Alternatively you can use the "hamburger menu" from any page within Anypoint Platform portal to navigate to Design Center:
 
-    ![Hamburger Menu](../../assets/images/module1/module1_lab2_hamburger_menu.png "Hamburger")
-    ![Hamburger Menu Select](../../assets/images/module1/module1_lab2_hamburger_menu_select.png "Hamburger Select")
+    ![Hamburger Menu]({{ page.assets }}module1_lab2_hamburger_menu.png "Hamburger")
+
+    ![Hamburger Menu Select]({{ page.assets }}module1_lab2_hamburger_menu_select.png "Hamburger Select")
 
 2. **Anypoint Design Center** is used to design your API’s. When you arrive at the Design Center landing page you will see a list of API’s that have already been designed by your organization.
-    ![Design Center Home](../../assets/images/module1/module1_lab2_design_center_home.png)
+    ![Design Center Home]({{ page.assets }}module1_lab2_design_center_home.png)
 
 3. To create a new API, Click on the Create + button.
 
-    ![Arrpw](../../assets/images/module1/module1_lab2_design_center_home_arrow.png "Arrow")
+    ![Arrpw]({{ page.assets }}module1_lab2_design_center_home_arrow.png "Arrow")
 
 4. Select "New API Specification".
-    ![Create API](../../assets/images/module1/module1_lab2_design_center_home_arrow_createapi.png "Crete API")
+    ![Create API]({{ page.assets }}module1_lab2_design_center_home_arrow_createapi.png "Crete API")
 
 5. Set the following values in the Add API form:
 
@@ -154,18 +156,18 @@ In this step, you will create an API and design it using the Anypoint Design Cen
     {: .note}
     Since we are working in a shared organization, please give your API a unique name. For the purposes of this exercise please prepend your API with your Anypoint account username.
 
-    ![New API](../../assets/images/module1/module1_lab2_design_center_new_api.png "New API")
+    ![New API]({{ page.assets }}module1_lab2_design_center_new_api.png "New API")
 
 6. Click **Create API**. This will create the basic structure of your RAML-based API specification. Note that for full RAML support, you should start with the first option (API Designer), which is the standard RAML-based API Designer.
 
-    ![Created API](../../assets/images/module1/module1_lab2_design_center_created_api.png "Created API")
+    ![Created API]({{ page.assets }}module1_lab2_design_center_created_api.png "Created API")
 
 # Step 3: Create the Orders List Resource
 In order to provide order handling functionality for the e-commerce application, we will design a list resource in our API using RAML.
 
 **Anypoint Design Center** will provide a visual API editor to start with a step-by- step tutorial to guide you through designing your API visually.
 
-![API Editor](../../assets/images/module1/module1_lab2_visual_design_center_api_editor.png "API Editor")
+![API Editor]({{ page.assets }}module1_lab2_visual_design_center_api_editor.png "API Editor")
 
 1. Let’s add some general details about the API.
 
@@ -176,16 +178,16 @@ In order to provide order handling functionality for the e-commerce application,
     
     You should now see the following in your API design:
 
-    ![Edotpr](../../assets/images/module1/module1_lab2_raml_general_config.png "Editor")
+    ![Edotpr]({{ page.assets }}module1_lab2_raml_general_config.png "Editor")
 
     {: .note}
     While you are visually creating the API, Anypoint Design Center presents the real-time RAML and OAS Definition on the right panel. This will continue as we add resources to your API. You can switch between RAML and OAS view with the bottom right tabs.
 
 2. Now you need to add a resource. A resource is the definition of an entity that your API will manage. Click the + to the right of **Resources**, to add resource.
-    ![Create Resource](../../assets/images/module1/module1_lab2_create_resource.png "Create Resource")
+    ![Create Resource]({{ page.assets }}module1_lab2_create_resource.png "Create Resource")
 
 3. Rename the resource from `/new-resource` to `/order`. Select the `POST` option and under summary → description, give it a description: `Creates a new Order instance` as shown. Notice the generated RAML on the right. 
-    ![RAML Post](../../assets/images/module1/module1_lab2_raml_post.png "RAML Post")
+    ![RAML Post]({{ page.assets }}module1_lab2_raml_post.png "RAML Post")
 
 Congratulations! You have completed creation of an `/order` resource with a basic description.
 
@@ -194,25 +196,25 @@ Congratulations! You have completed creation of an `/order` resource with a basi
 In the previous step we created an Order collection resource and POST method to enable the e-commerce application to create a new Order instance. What if we wanted to let the e-commerce application get the status of a single order? We need to create a new resource underneath the Order instance and use the GET method.
 
 1. Click the + button over the **/order** resource and Rename `/order/new-resource` to `/order/{order_id}`.
-    ![Add nested resources](../../assets/images/module1/module1_lab2_add_nested_resource_1.png "Add nested resources")
+    ![Add nested resources]({{ page.assets }}module1_lab2_add_nested_resource_1.png "Add nested resources")
     
     {: .note}
     Curly brackets indicate dynamic variables where a value will need to be passed when called.
 
 2. Click the **URI Parameters** button and add `order_id` as required with type String. Also as we did in the previous step, enter a description: `Order instance resource allowing to retrieve an order`
-    ![URI Params](../../assets/images/module1/module1_lab2_design_center_api_orders_uriparam.png "URI Params")
+    ![URI Params]({{ page.assets }}module1_lab2_design_center_api_orders_uriparam.png "URI Params")
 
 3. Under the GET method click on the **Responses** tab, then click on the Add New Response button. You should now see a response with a 200 OK response code. Under the responses tab, click **Add Body** under the Bodies section to add a JSON response to the GET method.
-    ![GET Response](../../assets/images/module1/module1_lab2_get_response_add_body.png "GET Response")
+    ![GET Response]({{ page.assets }}module1_lab2_get_response_add_body.png "GET Response")
 
 4. Notice the RAML specification on the right updated with the body.
-    ![Add Response Body](../../assets/images/module1/module1_lab2_add_response_body.png "Add response body")
+    ![Add Response Body]({{ page.assets }}module1_lab2_add_response_body.png "Add response body")
 
 5. Let’s add an example JSON to the response. We need to expand the “bodies” section by clicking the downwards arrow.
-    ![Expand Response Body](../../assets/images/module1/module1_lab2_expand_response_body.png "Expand Response Body")
+    ![Expand Response Body]({{ page.assets }}module1_lab2_expand_response_body.png "Expand Response Body")
 
 6. Once expanded, you will see the “Example” section.
-    ![Expanded Response Body](../../assets/images/module1/module1_lab2_expanded_response_body.png "Expanded Response Body")
+    ![Expanded Response Body]({{ page.assets }}module1_lab2_expanded_response_body.png "Expanded Response Body")
     {: .warning}
     Do Not Copy/Paste from a PDF document!
 7. Under “Example”, click the Edit tab and copy/paste the following JSON code
@@ -246,11 +248,11 @@ In the previous step we created an Order collection resource and POST method to 
     }
     ```
 
-    ![Add Example](../../assets/images/module1/module1_lab2_add_example.png "Add Example")
+    ![Add Example]({{ page.assets }}module1_lab2_add_example.png "Add Example")
 
 # Step 5: Switching between RAML and OAS view
 Inside the Anypoint Platform you can work with RAML and OAS seamlessly. You can check that going to the right panel, where the specification code is shown, and selecting on the bottom the OAS tab.
-    ![OAS Console](../../assets/images/module1/module1_lab2_design_center_oas_console.gif "OAS Console")
+    ![OAS Console]({{ page.assets }}module1_lab2_design_center_oas_console.gif "OAS Console")
 
 {: .note}
 Mulesoft supports OAS 3.0. The specification can be either a YAML (.yaml) or JSON (.json).
@@ -263,7 +265,7 @@ In the Step 3 and Step 4 of this lab we created resources and methods for our Om
 So first we need to change the view.
 
 1. Click the Edit RAML button to go to the RAML Editor mode and confirm that you will be using the code editor instead of the visual editor
-    ![Edit RAML Button](../../assets/images/module1/module1_lab2_edit_raml_button.png "Edit RAML Button")
+    ![Edit RAML Button]({{ page.assets }}module1_lab2_edit_raml_button.png "Edit RAML Button")
 
     {: .note}
     Once you have switched to editing RAML directly, you will not be able to switch back to the Visual Editor
@@ -271,17 +273,17 @@ So first we need to change the view.
 2. On the popup window, please select **Yes, send me to the code editor**.
 
 3. Press **Continue**
-    ![RAML Confirmation](../../assets/images/module1/module1_lab2_raml_confirmation.png "RAML Confirmation")
+    ![RAML Confirmation]({{ page.assets }}module1_lab2_raml_confirmation.png "RAML Confirmation")
     
     You should see the RAML editor.
 
-    ![RAML Editor](../../assets/images/module1/module1_lab2_raml_spec.png "RAML Editor")
+    ![RAML Editor]({{ page.assets }}module1_lab2_raml_spec.png "RAML Editor")
 
 4. Place the cursor at the end of the RAML specification.
 
     The screenshot and table below gives an overview of the various sections of the API Designer that you will use
 
-    ![API Editor](../../assets/images/module1/module1_lab2_design_center_api_editor.png "API Editor")
+    ![API Editor]({{ page.assets }}module1_lab2_design_center_api_editor.png "API Editor")
 
     {: .note-title}
     > Tip
@@ -303,19 +305,19 @@ First we are going to enable the mocking service for internal use.
 2. Click on the **Get** method.
 3. Click the **Select server** dropdown and select Mocking Service
 
-    ![Enable Mock Service](../../assets/images/module1/module1_lab2_enable_mock_service.gif "Enable Mock Service")
+    ![Enable Mock Service]({{ page.assets }}module1_lab2_enable_mock_service.gif "Enable Mock Service")
 
 4. Click **Try It**.
 5. Enter any value in the **order_id** text and press send.
 6. Scroll down and you should see a 200 response with the Order record in a JSON format that adheres to the example you set in the API definition.
 
-    ![Try It Result](../../assets/images/module1/module1_lab2_tryit_results.gif "Try it Result")
+    ![Try It Result]({{ page.assets }}module1_lab2_tryit_results.gif "Try it Result")
 
     While we do the development of the API, we can leave the mock service as the default server. So everybody in the organization can test the API.
 
 7. Click **Mocking Service Configuration** and click the **Select by Default** slider.
 
-    ![Mocking Service Default](../../assets/images/module1/module1_lab2_mocking_service_default.gif "Mocking Service Default")
+    ![Mocking Service Default]({{ page.assets }}module1_lab2_mocking_service_default.gif "Mocking Service Default")
 
     You could eventually make the link public so the link can be accessed by someone outside the Anypint Organization.    
 
@@ -326,62 +328,62 @@ In the Step 4 of this lab we created a GET method for our Omni Channel Experienc
 1. Let’s provide an example of what the e-commerce application should expect when invoking the `GET` method on the `/order/{order_id)` resource. There are several ways to declare the example response in RAML, but lets see how easy it is to use Exchange to search for and incorporate a **RAML fragment** into our project.
 
     Click on the "dependency icon" on the left hand side of the API Designer:
-    ![Dependency Icon](../../assets/images/module1/module1_lab2_design_center_dependency_icon.png "Dependency Icon")
+    ![Dependency Icon]({{ page.assets }}module1_lab2_design_center_dependency_icon.png "Dependency Icon")
 
 2. You should now see the project dependency section of your API specification. RAML allows API designers to not only define the resources, methods, and attributes of the API, but it also allows you to reference external files containing fragments of RAML. These fragments can define commonly used data definition, examples, traits, and resourceTypes, making the API design process easier and more consistent across the organization.
 
 3. Click on the + button on `Fragments` to add a dependency:
 
-    ![Add Dependency](../../assets/images/module1/module1_lab2_design_center_dependency_add.png "Add Dependency")
+    ![Add Dependency]({{ page.assets }}module1_lab2_design_center_dependency_add.png "Add Dependency")
 
 4. You should see a list of RAML fragments.
-    ![List Dependencies](../../assets/images/module1/module1_lab2_design_center_dependency_list.png "List Dependencies")
+    ![List Dependencies]({{ page.assets }}module1_lab2_design_center_dependency_list.png "List Dependencies")
 
 5. For the purposes of this workshop we have created a simple example of an order in Exchange. Use the search bar to find the asset titled **Order Instance Example** and add it to your project:
-    ![Search Dependency](../../assets/images/module1/module1_lab2_design_center_dependency_search.png "Search dependency")
+    ![Search Dependency]({{ page.assets }}module1_lab2_design_center_dependency_search.png "Search dependency")
 
 6. Add the RAML fragment to your project by ticking the checkbox and pressing the **Add** button.
-    ![Select Dependency](../../assets/images/module1/module1_lab2_design_center_dependency_select.png "Select Dependency")
+    ![Select Dependency]({{ page.assets }}module1_lab2_design_center_dependency_select.png "Select Dependency")
 
 7. The API Designer will now pull the **Order Instance Example** RAML fragment from Exchange.
 
 8. To see these files, click on the **Files** icon at the top left of the API Designer:
-    ![Files](../../assets/images/module1/module1_lab2_design_center_files.png "Files")
+    ![Files]({{ page.assets }}module1_lab2_design_center_files.png "Files")
 9. Expand **exchange_modules** and select **order-instance-example.raml**. Your Project Explorer should look something like this:
-    ![Files Example](../../assets/images/module1/module1_lab2_design_center_files_example.png "Files Example")
+    ![Files Example]({{ page.assets }}module1_lab2_design_center_files_example.png "Files Example")
     The above RAML fragment on the right defines an example of what an Order instance might look like. By defining this example using a format-neutral language like RAML (instead of a JSON object which is what is expected to be returned) we give the API designer flexibility to change the method’s data format (i.e. from JSON to XML) and still be able to create a valid example.
 
 10. Remove the hardcoded example we wrote on Step 4
-    ![Remove Text](../../assets/images/module1/module1_lab2_remove_text.png "Remove Text")
+    ![Remove Text]({{ page.assets }}module1_lab2_remove_text.png "Remove Text")
     At this point we have only referenced the RAML fragment from our project. The last step is to designate the Order example as the **example**: data for the /order/{order_id}: resource.
 
     Let’s start by copying the Resource complete path into the clipboard.
 
 11. Click on the ![Icon 3](../../assets/images/module1/icons_3_dots_white.png) white menu:
-    ![Ellipsis](../../assets/images/module1/module1_lab2_design_center_files_ellipsis.png "Ellipsis")
-    ![Ellipsis 2](../../assets/images/module1/module1_lab2_design_center_files_ellipsis2.png "Ellipsis")
+    ![Ellipsis]({{ page.assets }}module1_lab2_design_center_files_ellipsis.png "Ellipsis")
+    ![Ellipsis 2]({{ page.assets }}module1_lab2_design_center_files_ellipsis2.png "Ellipsis")
 
 12. Now, return to the bottom of our main API specification file.
 
     {: .highlight}
     example: !include
 
-    ![Order API](../../assets/images/module1/module1_lab2_design_center_files_order_api.png "Order API")
+    ![Order API]({{ page.assets }}module1_lab2_design_center_files_order_api.png "Order API")
 
     The **!include** directive allows you to create a relative path reference to other files in your RAMl project.
 
 13. Paste the pathname next to the **!include** directive in the RAML file.
-    ![API Path](../../assets/images/module1/module1_lab2_design_center_files_order_api_path.png "API Path")
+    ![API Path]({{ page.assets }}module1_lab2_design_center_files_order_api_path.png "API Path")
 
 14. Take a look at the API Summary. You could see the Get resources under `/{order_id}`
-    ![API Summary](../../assets/images/module1/module1_lab2_api_summary.png "API Summary")
+    ![API Summary]({{ page.assets }}module1_lab2_api_summary.png "API Summary")
 
 15. Click on the **Get** resource and you will see the description:
     - Operation description
     - URI Parameters
     - Response examples
 
-    ![API Summary Scroll](../../assets/images/module1/module1_lab2_api_summary_scroll.png "API Summary Scroll")
+    ![API Summary Scroll]({{ page.assets }}module1_lab2_api_summary_scroll.png "API Summary Scroll")
 
 Use the mocking service and check the examples is updated too.
 

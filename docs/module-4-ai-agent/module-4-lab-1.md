@@ -64,9 +64,9 @@ In order for our agent UI to work, we need to deploy an API that exposes an endp
 
 # Step 2 - Implement the API
 
-In this module you will be using the [Mule AI Chain](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/) connector to allow your API to converse with OpenAI about your customer's orders!
+In this module you will be using the [Mule AI Chain](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/) connector to allow your API to converse with Azure OpenAI about your customer's orders!
 
-As you learned in Module 2, we will create an API scaffolding using the specification you published to Exchange in the previous step.
+Similarly to what you have already done in Module 2, we will create an API scaffolding using the specification you published to Exchange in the previous step.
 
 1. In Anypoint Studio select **File --> New --> Mule Project**
 2. Call your project `<initials> - AI Agent API`
@@ -90,16 +90,18 @@ As you learned in Module 2, we will create an API scaffolding using the specific
 
     ```json
         {
-            "OPENAI": {
-                "OPENAI_API_KEY": "<PROVIDED BY YOUR INSTRUCTORE>"
+            "AZURE_OPENAI": {
+            "AZURE_OPENAI_KEY": "",
+            "AZURE_OPENAI_ENDPOINT": "",
+            "AZURE_OPENAI_DEPLOYMENT_NAME": ""
             }
         }
     ```
 
-    For this workshop we'll be leveraging OpenAI as the LLM to generate the natural language response. However, our connector supports multiple LLMs as you can se on the connector [documentation](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/mulesoft-ai-chain-connector-reference) page.
+    For this workshop we'll be leveraging Azure OpenAI as the LLM to generate the natural language response. However, our connector supports multiple LLMs as you can se on the connector [documentation](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/mulesoft-ai-chain-connector-reference) page.
     
     {: .note}
-    Your instructor will provide you with the OpenAI API Key that has been provisioned specifically for this workshop.
+    Your instructor should have provided you with the API Key and Deployment Name needed to connect to the LLM provisioned for this workshop.
 
 7. To allow your agent to invoke the orders API we will leverage the [Tooling](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/#tools-operations) capability of the Mule AI Chain connector. Tools is the ability of an LLM to invoke an action whenever the LLM is not able to answer the user's question. In our case the only way the LLM can provide details about orders is by invoking an external API which we will configure.
     
@@ -126,7 +128,7 @@ As you learned in Module 2, we will create an API scaffolding using the specific
             ]
     ```
 
-8. We now need to update the previous file with the host name of the orders API. 
+8. We now need to update the previous file with the host name of the orders API that the connector will invoke to ground the customer's prompt. 
 
     {: .note}
     The API-Led workshop Anypoint environment already has a fully implemented version of the Order API which, among others, provides an endpoint to get all the orders given a customer ID. This implementation doesn't not connect to any backend and therefore you can pass the API any value as customerId. 
@@ -137,5 +139,91 @@ As you learned in Module 2, we will create an API scaffolding using the specific
     - Copy the **Public Endpoint** and paste it in the `tools.json` file where it says `<CHANGE THIS>`
     
     Check the following animation to see the steps we just described:
-    
 
+    ![]({{ page.assets }}module4-lab1-copy-host-name.gif)
+
+9. Open the `<initials>-ai-agent-api.xml` file and in the Mule Palette click on Search in Exchange
+10. Search for **mulesoft ai chain**, click on **Add** once the **MuleSoft AI Chain Connector is displayed** then click on **Finish**
+
+    ![]({{ page.assets }}module4-lab1-import-mule-chain.png)
+
+11. Now scroll down to the  `post:\chat:application\json:nb-ai-agent-api-config` flow and remove the **Logger** connector
+12. From the Mule Palette select the **MuleSoft AI Chain** connector and then select the **Tools use ai service** operation
+
+    ![]({{ page.assets }}module4-lab1-select-mulechain-connector.png)
+
+13. Drag the **Tools use ai service** operation into the `post:\chat:application\json:nb-ai-agent-api-config` flow
+
+    ![]({{ page.assets }}module4-lab1-post-flow.png)
+
+    Believe it or not, our agent is pretty much done. The last task is to configure the MuleSoft ai Chain connector.
+
+14. Click on the **Tools use ai service** connector you just added to the flow and in the configuration pane paste this value in the **Tool config** field:
+
+    ```
+        mule.home ++ "/apps/" ++ app.name ++ "/tools.json"
+    ```
+
+    {: .note }
+    Ensure the "Switch to expression mode" button <img src="{{ page.assets }}module4-lab1-switch-mode.png" width="25px"> is enabled. If this is true you will see the value above showing syntax highlighting:
+    ![]({{ page.assets }}module4-lab1-tool-config.png)
+
+15. In the **Data** field enter:
+
+    ```
+        payload.prompt
+    ```
+    Again, ensure the "Switch to expression mode" button <img src="{{ page.assets }}module4-lab1-switch-mode.png" width="25px"> is enabled (it should already be the case)
+
+16. Finally click the "**+**" button next to **Module configuration** and select the following values:
+    - **LLM Type** : `AZURE_OPENAI`
+    - **Config type** : `Configuration Json` (we'll specify the `muleChain.json` file we created earlier)
+    - **File path**: `mule.home ++ "/apps/" ++ app.name ++ "/mule-chain.json"` 
+        - Make sure the expression language button **Fx** is enabled. You should see the syntax being highlighted as explained earlier
+    - **Model name** - `gpt-4o-mini`
+
+    You can leave all the other fields with the pre-defined default values.
+
+    ![]({{ page.assets }}module4-lab1-mule-chain-config.png)
+
+    This is how the connector configuration should look like:
+
+    ![]({{ page.assets }}module4-lab1-mule-chain-tool-config.png)
+
+    And that's it! Your agent is basically done!
+
+## Step 3 - Test your agent locally
+We can test our agents directly in Studio before deploying it. We will use the embedded API console to invoke our agent
+
+1. Right click on your application name in Package Explorer and select **Run As -> Mule Application**
+    
+    ![]({{ page.assets }}module-4-lab-1-run-the-app.png)
+
+2. Once the application is running click on **Open console** in the APIKit Console pane:
+
+    ![]({{ page.assets }}module-4-lab-1-open-console.png)
+
+3. No click on the `POST` method:
+
+    ![]({{ page.assets }}module-4-lab-1-agent-post.png)
+
+4. Click on the Try It button:
+
+    ![]({{ page.assets}}module-4-lab-1-try-it.png)
+
+5. In the Body section, type "**What are my orders? My Client ID is 23423434**" and click on **Send**
+
+    ![]({{ page.assets }}module-4-lab-1-prompt-body.png)
+
+6. If everything goes well you should receive a response that provides a list of orders:
+
+    ![]({{ page.assets }}module-4-lab-1-ai-response.png)
+
+    {: .note }
+    The API we are invoking is not actually connected to any backend and therefore you can provide any Customer ID. Also note that we wanted to keep this module simple hence why we need to provide a customer ID. In a real life project we would add other tools to allow the Agent to identify the customer so we wouldn't need to provide an ID which customers wouldn't necessarely know.
+
+## Summary
+
+In this module you've learned about the [MuleChain AI connector](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/) and specifically how to leverage the [Tooling](https://docs.mulesoft.com/mulesoft-ai-chain-connector/latest/configuring-tools-operations) to instruct the agent to autonomously invoke an existing API to ground a customer prompt.
+
+Now let's move to the [Next](./module-4-lab-2) module to deploy and test our agent!

@@ -15,11 +15,11 @@ In this first module we will explore the capabilities of the **MuleSoft’s Anyp
 
 **Anypoint Design Center** provides a set of interactive tools that enable API designers to create or modify the specifications for an API. These specifications form the underlying API contract between the provider and the consumer of the API. **Anypoint Design Center** also enables the development of API Portals, documentation used to communicate to developers how the API should be consumed.
 
-![Start Designing](../..//assets/images/module1/module1_lab2_anypoint_home.png)
+![Start Designing](../..//assets/images/module1/lab2/module1_lab2_anypoint_home.png)
 
 API discovery and collaboration is provided by **Anypoint Exchange** and simplifies the way that reusable assets are discovered and consumed across the enterprise. We will explore the features of **Anypoint Exchange** in detail in this first module.
 
-![Discover and Share](../..//assets/images/module1/module1_lab1_exchangeicon.png "Discover and Share")
+![Discover and Share](../..//assets/images/module1/lab1/module1_lab1_exchangeicon.png "Discover and Share")
 
 The first module of the workshop will focus on how to use **Anypoint Design Center** and **Anypoint Exchange** to design, document, publish, and discover the features of a modern API.
 

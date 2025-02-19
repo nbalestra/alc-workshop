@@ -2,6 +2,7 @@
 parent: Module 1 - API Design
 title: Lab 3 - Publish the Omni Channel API to Exchange
 nav_order: 4
+assets: "../../assets/images/module1/lab3/"
 ---
 1. TOC
 {:toc}
@@ -28,29 +29,29 @@ Before we get started, make sure you are logged into the **Anypoint Platform** a
 
 1. Go to the Setup located at the top right corner.
 2. In the drop down menu select **Import from Exchange**
-    ![Import from Exchange](../../assets/images/module1/module1_lab3_import_from_exchange.png "Import from Exchange")
+    ![Import from Exchange]({{ page.assets }}module1_lab3_import_from_exchange.png "Import from Exchange")
 
 3. Look for Omni Channel Experience API.
 4. Select **Omni Channel Experience API**
 5. Press **Import asset**
-    ![Import Asset](../../assets/images/module1/module1_lab3_choose_omni_channel_exp.png "Choose Omni Channel")
+    ![Import Asset]({{ page.assets }}module1_lab3_choose_omni_channel_exp.png "Choose Omni Channel")
 
     Is going to ask you to replace the root file.
 
 6. Choose **Yes**
-    ![Root File](../../assets/images/module1/module1_lab3_root_file.png "Root File")
+    ![Root File]({{ page.assets }}module1_lab3_root_file.png "Root File")
 
     {: .note}
     Anypoint Design Center supports both RAML and Open API specification (OAS) languages when importing an API specification. OAS is a common format popularized by open-source Swagger tools.
 
 7. Delete the RAML file **{Your Anypoint Username}-omni-channel-experience-api.raml** from your project explorer that we were previously editing. We no longer need that file since the API we just imported replaces that specification. Click the "ellipsis" menu next to your file and then click "delete":
-    ![Delete RAML](../../assets/images/module1/module1_lab3_ellipsis_delete.png "Delete RAML")
+    ![Delete RAML]({{ page.assets }}module1_lab3_ellipsis_delete.png "Delete RAML")
 
 8. Delete the _omni-channel-experience-api.raml_ file.
-    ![Delete RAML 2](../../assets/images/module1/module1_lab3_ellipsis_delete2.png "Delete RAML 2")
+    ![Delete RAML 2]({{ page.assets }}module1_lab3_ellipsis_delete2.png "Delete RAML 2")
 
 9. Select the new RAML file we imported. You should see the following complete API specification:
-    ![Full API](../../assets/images/module1/module1_lab3_full_api.png "Full API")
+    ![Full API]({{ page.assets }}module1_lab3_full_api.png "Full API")
 
     {: .note}
     Note the extensive use of references to other assets published in **Anypoint Exchange**. This API designer is using the features of Anypoint Exchange to efficiently reuse common data types, traits, and other API fragments.    
@@ -63,13 +64,13 @@ The full API specification designates that a client_id and client_secret are req
 ## Step 2: Publish Your API to Anypoint Exchange
 
 1. Click on the **Publish** button to publish to Exchange.
-    ![DC Publish](../../assets/images/module1/module1_lab3_design_center_publish.png "DC Publish")
+    ![DC Publish]({{ page.assets }}module1_lab3_design_center_publish.png "DC Publish")
 
 2. A popup window to capture the attributes that you want to publish to Exchange will appear. Most of these fields will be pre-populated and the RAML will be verified to ensure that there are no errors. Complete the **Asset version** field with `1.0.0`.
-    ![Tags](../../assets/images/module1/module1_lab3_publish_exchange_tags.png "Tags")
+    ![Tags]({{ page.assets }}module1_lab3_publish_exchange_tags.png "Tags")
 
 3. Click the "Publish to Exchange" button when you have finished reviewing the API name and version information. We have now published our Omni Channel Experience API to **Anypoint Exchange** for other developers to discover and consume!
-    ![Publish Exchange](../../assets/images/module1/module1_lab3_publish_exchange_success.png "Publish to Exchange")
+    ![Publish Exchange]({{ page.assets }}module1_lab3_publish_exchange_success.png "Publish to Exchange")
 
 Each time you publish an API Specification you will generate two assets:
 - RAML Spec: This is the RAML Specification. Everybody on the organization can discover the spec and documentation.
@@ -79,14 +80,14 @@ Each time you publish an API Specification you will generate two assets:
 As demonstrated in Step 2, publishing your API to exchange is as easy as a few clicks. However, Exchange has really only just captured the basic attributes and documentation for your API at this point. Ensuring that your API is easy to find and "self-service ready" is your responsibility as an API designer. Let’s find our API in Exchange and add more to our API documentation.
 
 1. Navigate to Exchange from the "hamburger menu" at the top left corner of Design Center.
-    ![Navigate to Exchange](../../assets/images/module1/module1_lab3_navigate_to_exchange "Navigate to Exchange")
-    ![Navigate to Exchange 2](../../assets/images/module1/module1_lab3_navigate_to_exchange2.png "Navigate to Exchange 2")
+    ![Navigate to Exchange]({{ page.assets }}module1_lab3_navigate_to_exchange.png "Navigate to Exchange")
+    ![Navigate to Exchange 2]({{ page.assets }}module1_lab3_navigate_to_exchange2.png "Navigate to Exchange 2")
 
 2. Use the search bar to find your API if it is not already visible in the list of Exchange assets. Click on your API once you find it:
-    ![Exchange Select Asset](../../assets/images/module1/module1_lab3_exchange_assets_select.png "Exchange Select Asset")
+    ![Exchange Select Asset]({{ page.assets }}module1_lab3_exchange_assets_select.png "Exchange Select Asset")
 
 3. Click on the "Edit documentation" button to launch edit mode.
-    ![Edit asset](../../assets/images/module1/module1_lab3_exchange_edit.png "Edit asset")
+    ![Edit asset]({{ page.assets }}module1_lab3_exchange_edit.png "Edit asset")
 
 4. Exchange assets are documented using "markdown" language. Markdown language is a format-agnostic syntax used for creating documentation independent of how it will be rendered (i.e. HTML, PDF, text, etc). It is used by popular applications like GitHub as the standard way to create software documentation. For more information on markdown please refer to:
 
@@ -105,13 +106,13 @@ Developers requiring can easily compose innovative applications by leveraging th
  - Create a new order
  ```
 
-    ![Exchange Markdown](../../assets/images/module1/module1_lab3_exchange_editor_markdown.png "Exchange Markdown")
+    ![Exchange Markdown]({{ page.assets }}module1_lab3_exchange_editor_markdown.png "Exchange Markdown")
 
     {: .note}
     If you prefer WYSIWYG editing then you can click on the "Visual" button at the top and be presented with a visual editor instead of the markdown-based editor. Both editors produce markdown at the end.
 
 5. Click on the "Save" button. Your draft of the API documentation is saved but not published until you formally "Publish" the final updates to Exchange, so feel free to save multiple drafts as you create your documentation.
-    ![Editor Draft](../../assets/images/module1/module1_lab3_exchange_editor_draft_page.png "Editor Draft")
+    ![Editor Draft]({{ page.assets }}module1_lab3_exchange_editor_draft_page.png "Editor Draft")
 
     - You can press Publish, Discard , Edit or View ublished.
         - Discard - Throw away changes
@@ -120,7 +121,7 @@ Developers requiring can easily compose innovative applications by leveraging th
         - Publish - Publish documentation changes to exchange
 
 6. Press the **Publish** button. Your documentation changes are now visible on Exchange!
-    ![Editor Final Page](../../assets/images/module1/module1_lab3_exchange_editor_final_page.png "Editor Final Page")
+    ![Editor Final Page]({{ page.assets }}module1_lab3_exchange_editor_final_page.png "Editor Final Page")
 
     Exchange documentation can be comprised of multiple pages. So far we have just created the home page for our API.
 
@@ -132,10 +133,10 @@ Like in Design Center, in Exchange you can look at the **API Summary**. The **AP
 We are going to see how it can be done.
 
 1. Go to the **API Summary**
-    ![API Summary](../../assets/images/module1/module1_lab4_exchange_api_summary.png "API Summary")
+    ![API Summary]({{ page.assets }}module1_lab4_exchange_api_summary.png "API Summary")
 
 2. Press /products/search `[GET]`
-    ![Product Search](../../assets/images/module1/module1_lab4_exchange_product_search.png "Product Search")
+    ![Product Search]({{ page.assets }}module1_lab4_exchange_product_search.png "Product Search")
 
 3. On the right side of the panel you will see the **GET** method to be called.
 
@@ -144,24 +145,24 @@ We are going to see how it can be done.
     You can see the **Parameters, Headers** and how they are filled.
 
     In the **Parameters** tab you can see all the optional parameters that can be send.
-    ![Product Search](../../assets/images/module1/module1_lab4_product_search.png "Product Search")
+    ![Product Search]({{ page.assets }}module1_lab4_product_search.png "Product Search")
 
 4. Press **SEND** and see what happens.
-    ![Product Search Response](../../assets/images/module1/module1_lab4_exchange_product_search_response.png "Product Search Response")
+    ![Product Search Response]({{ page.assets }}module1_lab4_exchange_product_search_response.png "Product Search Response")
 
     - You can see the mock response with the following information:
     
         The http response and the response time.
-        ![HTTP Response](../../assets/images/module1/module1_lab4_http_response.png "HTTP Response")
+        ![HTTP Response]({{ page.assets }}module1_lab4_http_response.png "HTTP Response")
     
     - Under the ![3 dots](../../assets/images/module1/icons_3_dots_white.png "3 dots") you can find:
 
-        ![Message icon](../../assets/images/module1/module1_lab4_message_icons.png "Message Icons")
+        ![Message icon]({{ page.assets }}module1_lab4_message_icons.png "Message Icons")
     
     - These options let you download the response, copy the response to clipboard, save it as HAR 1.2 and format the view.
 
     - The **Response detail** option shows the Request Detail. URL, Response and Request headers.
-        ![Response Details](../../assets/images/module1/module1_lab4_response_details.png "Response Details")
+        ![Response Details]({{ page.assets }}module1_lab4_response_details.png "Response Details")
 
 
 **Congratulations! You have completed all of the labs in this Module!**
