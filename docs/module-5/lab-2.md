@@ -1,5 +1,5 @@
 ---
-parent: Module 5 - Salesforce Integration
+parent: Module 5 - Ubiquitus Connectivity - Salesforce Integration
 title: "Lab 2: Implement the customer creation logic"
 nav_order: 2
 assets: "../../assets/images/module5/lab2/"

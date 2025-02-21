@@ -1,5 +1,5 @@
 ---
-parent: Module 5 - Salesforce Integration
+parent: Module 5 - Ubiquitus Connectivity - Salesforce Integration
 title: "Lab 4: (Optional) Error Handling"
 nav_order: 3
 assets: "../../assets/images/module5/lab4/"
