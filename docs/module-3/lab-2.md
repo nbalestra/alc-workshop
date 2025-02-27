@@ -146,7 +146,7 @@ Now our configuration to create the order is complete, but there is one thing mi
 
 4. Match the **CreateOrderResult​** on the left, with the id​ on the right by *dragging* the **CreateOrderResult** field from the input side over to **id** field on the output side.
 
-5. After this, just click outside in the white canvas to save the changes, or click the <img src="{{ page.assets }}module9_lab2_as_savebutton (1)" width="25px"> button at the top right of the element panel.
+5. After this, just click outside in the white canvas to save the changes, or click the <img src="{{ page.assets }}module9_lab2_as_savebutton.png" width="25px"> button at the top right of the element panel.
 
 ## Summary
 In this lab, you completed the following steps:

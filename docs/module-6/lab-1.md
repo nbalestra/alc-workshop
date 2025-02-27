@@ -117,6 +117,7 @@ Similarly to what you have already done in Module 2, we will create an API scaff
                 "name": "Retrieve orders",
                 "method": "GET",
                 "example-payload": "{}",
+                "headers" : "",
                 "query": [
                     "What are my order",
                     "List all the open orders",
@@ -203,21 +204,17 @@ We can test our agents directly in Studio before deploying it. We will use the e
 
     ![]({{ page.assets }}module-4-lab-1-open-console.png)
 
-3. No click on the `POST` method:
+3. Now click on the `POST` method:
 
     ![]({{ page.assets }}module-4-lab-1-agent-post.png)
 
-4. Click on the Try It button:
+4. In the Body section, type "**What are my orders? My Customer ID is 23423434**" and click on **Send**
 
-    ![]({{ page.assets}}module-4-lab-1-try-it.png)
-
-5. In the Body section, type "**What are my orders? My Client ID is 23423434**" and click on **Send**
-
-    ![]({{ page.assets }}module-4-lab-1-prompt-body.png)
+    ![]({{ page.assets }}lab1-prompt-body.png)
 
 6. If everything goes well you should receive a response that provides a list of orders:
 
-    ![]({{ page.assets }}module-4-lab-1-ai-response.png)
+    ![]({{ page.assets }}lab1-ai-response.png)
 
     {: .note }
     The API we are invoking is not actually connected to any backend and therefore you can provide any Customer ID. Also note that we wanted to keep this module simple hence why we need to provide a customer ID. In a real life project we would add other tools to allow the Agent to identify the customer so we wouldn't need to provide an ID which customers wouldn't necessarely know.

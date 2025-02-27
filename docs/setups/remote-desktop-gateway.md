@@ -25,7 +25,7 @@ The following will detail an alternate way to gain access to the windows machine
 
     *Example image of the Web Terminal login page:*
 
-    ![Guacamole UI](../assets/images/automation-l0-002.png "Guacamole UI")
+    ![Guacamole UI]({{ page.assets }}automation-l0-002.png "Guacamole UI")
 
     {: .note}
     User and password will be provided by the instructor

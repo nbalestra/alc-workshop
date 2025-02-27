@@ -9,7 +9,7 @@ Once your API-Led architecture is in place, you can seamlessly harness its capab
 
 In this module, you will leverage Generative AI to supercharge your AI Agent, enabling it to answer customer questions about your business and their orders using natural language. 
 
-![](../../assets/images/module6/module-4-api-architecture.png)
+![](../../assets/images/module6/lab1-apiled-architecture.png)
 
 By connecting to your existing Order API, the AI Agent becomes more informed and relevant, giving customers accurate and up-to-date information. This approach ensures that your AI Agent doesn’t just generate generic answers but delivers responses tailored to your business needs.
 

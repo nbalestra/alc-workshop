@@ -14,7 +14,7 @@ assets: "../../assets/images/module3/lab1/"
 
 In this lab, we will create the skeleton implementation of our Order API that will process requests to a SOAP Web Service. You will use Anypoint Studio to create a Mule application where there will be one flow for each method of each resource (i.e. GET orders). Additionally you will use APIKit (as part of your Mule application) to process REST requests, transform them to messages to be handled and processed by each flow.
 
-![]({{ page.assets }}module-3-ws-apiled.png)
+![]({{ page.assets }}module3-lab1-apiled.png)
 
 The implementation will consist of a couple of steps:
 
