@@ -12,7 +12,7 @@ assets: "../../assets/images/module3/lab2/"
 
 ## Overview
 
-In this step we are going to implement the post:/orders​ flow. To create an order, we are going to need to
+In this step we are going to implement the `post:/orders​` flow. To create an order, we are going to need to
 
 - Call the **.NET SOAP Service** to create the Order.
 
@@ -25,10 +25,9 @@ Since we are connecting to a SOAP Service, we are going to use the Webservice co
 
     ![]({{ page.assets }}module9_lab2_as_wsconnector_add.png)
 
-    An "Add Modules to Project" window will pop up.
+    An "Add Modules to Project" window will open.
 
-    In this window, type web service in the search window to narrow down the module you wish to add.
-    Select the **Web Service** Consumer Module and drag & drop the icon.
+    In this window, select the **Web Service** Consumer Module and drag & drop the icon to the left panel.
 
     ![]({{ page.assets }}module9_lab2_as_wsconnector_add2.png)
 
@@ -39,8 +38,8 @@ Now that we have the Webservice component in our project, We are going to consum
 
 1. Go to **post:\orders** flow.
 
-    {: warn }
-    Make sure you are modifying the **post:/orders** flow! Name should look like `post:\orders:application\json:api-config` or similar.
+    {: .warning }
+    Make sure you are in the right flow: **post:/orders**. The flow name should look like `post:\orders:application\json:api-config` or similar.
 
     ![]({{ page.assets }}module9_lab2_as_orderflow.png)
 
@@ -48,7 +47,7 @@ Now that we have the Webservice component in our project, We are going to consum
 
     ![]({{ page.assets }}module9_lab2_as_deletepp.png)
 
-3. Let’s add the Web Service Consume processor to the flow. To do that go to the Mule Palette panel and type web service in the filter you should see an icon like in the picture below.
+3. Let’s add the Web Service Consume processor to the flow. To do that go to the Mule Palette panel and in the filter text box type *web service*. You should see an icon like in the picture below.
 
     ![]({{ page.assets }}module9_lab2_as_pallette_ws.png)
 
@@ -85,7 +84,7 @@ We connected to the service. Now going back to the basic settings, we need to ch
 
 2. Select **Create Order​** from the list of operations.
 
-3. Go to the **Message** secrtion
+3. Go to the **Message** section
 
 4. In the Body section press the <img src="{{ page.assets }}module9_lab2_fx.png" width="25px"> button and then press the <img src="{{ page.assets }}module9_lab2_dw.png" width="25px"> button.
 
@@ -93,7 +92,7 @@ We connected to the service. Now going back to the basic settings, we need to ch
 
     ![]({{ page.assets }}module9_lab2_ws_dw.png)
 
-5. Copy and Paste the following script
+5. Copy the following script and paste it in the script text area by replacing the existing content (it should be just `payload`)
 
     ```
         %dw 2.0
@@ -144,7 +143,18 @@ Now our configuration to create the order is complete, but there is one thing mi
 
     ![]({{ page.assets }}module9_lab2_as_dwmap3.png)
 
-4. Match the **CreateOrderResult​** on the left, with the id​ on the right by *dragging* the **CreateOrderResult** field from the input side over to **id** field on the output side.
+4. Match the **CreateOrderResult​** on the left, with the **id**​ on the right by *dragging* the **CreateOrderResult** field from the input side over to **id** field on the output side.
+  The Dataweave script should look something like the following:
+
+  ```
+    %dw 2.0
+    output application/json
+    ns ns0 http://tempuri.org/
+    ---
+    {
+	  id: payload.body.ns0#CreateOrderResponse.ns0#CreateOrderResult as String default ""
+    }
+```
 
 5. After this, just click outside in the white canvas to save the changes, or click the <img src="{{ page.assets }}module9_lab2_as_savebutton.png" width="25px"> button at the top right of the element panel.
 

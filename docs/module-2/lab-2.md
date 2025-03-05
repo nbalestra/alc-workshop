@@ -38,72 +38,98 @@ Now that we’ve seen how APIKit helps developers import the designed REST API t
 
 ## Step 2: Examine the different flows within the project
 
-The previous lab already introduced the **APIKit**, **Error handling** and **Dataweave Transform Message** processors. In below flows we introduce **REST Connectors**, **Flow Control** components and **Scopes**. So let’s first look at these in more detail.
+The previous lab already introduced the **APIKit**, **Error handling** and **Dataweave Transform Message** processors. In the flows we'll discuss in this section we introduce **REST Connectors**, **Flow Control** components and **Scopes**. So let’s first look at these in more detail.
 
-![]({{ page.assets }}module2_lab2_step3_4a_rest_connector.png)
+---
 
 **REST Connector**
 
+![]({{ page.assets }}module2_lab2_step3_4a_rest_connector.png)
+
+
 A REST Connector is a component that can be used in Mule applications that’s been custom created via a specific framework. This framework allows you to create components entirely by using other existing Mule components. When an API Specification is published to exchange a REST Connector is automatically generated for it in Exchange by REST Connect Tool.
 
-![]({{ page.assets }}module2_lab2_step3_4b_flow_control.png)
+---
 
 **Flow Control**
 
+![]({{ page.assets }}module2_lab2_step3_4b_flow_control.png)
+
 Flow Control Routers such as the **Choice Router** allows for controling the message flow within a Mule flow.
 
-![]({{ page.assets }}module2_lab2_step3_4c_scopes.png)
+---
 
 **Scopes**
 
+![]({{ page.assets }}module2_lab2_step3_4c_scopes.png)
+
 Sometimes referred to as "wrappers", the message processors known as **Scopes** appear as processing blocks when you first place them on the Message Flow canvas.
+
 
 Now, lets look at all the flows within the project.
 
+---
+
+**get:\orders\orders\\{order_id\}**
+
 ![]({{ page.assets }}module2_lab2_step3_5_get_order_by_id.png)
 
-This flow calls the Order API to get an order from the database based on the order id
+This flow calls the **Process API** Order to get an order from the database based on the order id
 
-![]({{ page.assets }}module2_lab2_step3_6_get_order_search.png)
+---
 
 **get:\orders\search**
 
-This flow calls the Order API to get orders from the database based on a search
+![]({{ page.assets }}module2_lab2_step3_6_get_order_search.png)
 
-![]({{ page.assets }}module2_lab2_step3_7_get_product_by_id.png)
+This flow calls the **Process API** Order to get orders from the database based on a search
+
+---
 
 **get:\products\product\\\{product_id\}**
 
-This flow calls the Product API to get a product based on the product id
-![]({{ page.assets }}module2_lab2_step3_8_get_product_search.png)
+![]({{ page.assets }}module2_lab2_step3_7_get_product_by_id.png)
+
+This flow calls the **System API** Product to get a product based on the product id
+
+---
 
 **get:\products\search**
 
-This flow returns products from the database by calling the Product API
+![]({{ page.assets }}module2_lab2_step3_8_get_product_search.png)
 
-![]({{ page.assets }}module2_lab2_step3_9_get_user_shopping_cart.png)
+This flow returns products from the database by calling the **System API** Product
 
+---
 
 **get:\users\user\\\{user_id\}\shopping_cart**
 
+![]({{ page.assets }}module2_lab2_step3_9_get_user_shopping_cart.png)
+
 This flow returns all the items in a users shopping cart based on the user id
 
-![]({{ page.assets }}module2_lab2_step3_10_put_user_shopping_cart.png)
+---
 
 **put:\users\user\\\{user_id\}\shopping_cart**
 
+![]({{ page.assets }}module2_lab2_step3_10_put_user_shopping_cart.png)
+
 This flow puts an item into a users shopping cart based on the user id
-![]({{ page.assets }}module2_lab2_step3_11_post_shopping_cart.png)
+
+---
 
 **post:\users\user\\\{user_id\}\shopping_cart\confirmation**
+
+
+![]({{ page.assets }}module2_lab2_step3_11_post_shopping_cart.png)
 
 This flow confirms the items to purchase in a users shopping cart.
 
 ## Step 3: Update Shopping Cart confirmation Flow (Optional)
 
-In order to be able to confirm your order once it is placed, you might need to do some minor updates to the confirmation flow. You will be albe to test is in the next lab once you have the application deployed.
+In order to be able to confirm your order once it is placed, you might need to do some minor updates to the confirmation flow. You will be able to test this in the next lab once you have the application deployed.
 
-1. Search for "Set variable" in the mule palette.
+1. In the Mule Palette on the right of your screen, search for "Set variable".
 
     ![]({{ page.assets }}module2_lab2_set_variable.png)
 
@@ -112,12 +138,18 @@ In order to be able to confirm your order once it is placed, you might need to d
     ![]({{ page.assets }}module2_lab2_add_variable.png)
 
 3. Click on the Set variable and configure it with the following:
+
     a. Name: `user_id`
+
     b. Value: `attributes.uriParams.user_id` (remember to click the function button)
 
-4. Finally set a defaul value of 1 in the **Create User Response** transform
+4. Finally set a defaul value of 1 in the **Create User Response** transform. You do this by selecting the connector and updating the DataWeave expression for the quantity field. It should look like this:
 
     ![]({{ page.assets }}module2_lab2_set_default.png)
+
+    ```
+    quantity: product.quantityOnHand as Number default 1,
+    ````
 
 Once you have done this step you will be able to complete the order placed in the next lab.
 
@@ -178,4 +210,4 @@ This lab shows how quick and easy it is to enable your teams to get up and runni
 
 **Congratulations! You have completed Lab 2.**
 
-You can now proceed to [Lab 3](./lab-3){: .btn .btn-blue  .mr-2  }
+You can now proceed to [Lab 3](./lab-3)

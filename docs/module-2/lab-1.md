@@ -49,9 +49,9 @@ In this step we will create a new Mule application in Anypoint Studio from the O
 
     ![]({{ page.assets }}module2_lab1_file_new.png)
 
-8. Give the project the name **omni-channel-api-v1**
+8. Give the project the name **\<your initials\>-omni-channel-api-v1**
 
-9. Select the **Mule Server 4.4.0 EE** (or latest version if present).
+9. Select the **Mule Server 4.7.2 EE** (or latest version if present).
 
 10. Under **Import a Published API** we are going to import the RAML Spec from Exchange. Click on <img src="{{ page.assets }}module2_lab1_plus_button.png" width="25px"> and select **from Exchange**
 
@@ -92,13 +92,18 @@ In this step we will create a new Mule application in Anypoint Studio from the O
 
     **Done! now let’s explore what was automatically generated.**
 
-20. At the top of the diagram you will see a flow called **api-main** and **api-console** followed by flows, one for each method defined in the RAML.
+### The APKit component
 
-    The flows below are defined by your API Design in the RAML file. Typically, there will be flows that look like this `get:\resource`, `post:\resource`, `put:\resource`, etc. Note that the name of the flow is very important for the APIkit router to be able to route the request to the appropriate flow - you don’t want to change these.
+At the top of the diagram you will see a flow called **api-main** and **api-console** followed by flows, one for each method defined in the RAML.
 
-    When APIkit detects example data in the response of a method in the RAML it inserts a **Dataweave Transform Message** into the flow which returns the static response specified by the example data reference.
+The flows below are defined by your API Design in the RAML file. Typically, there will be flows that look like this `get:\resource`, `post:\resource`, `put:\resource`, etc. 
 
-    The static response returned by the auto-generated **Dataweave Transform Message** allows you to test the API as a stub immediately after generation. Obviously these flows can be enhanced to provide more advanced mock services as well as evolve them into full API implementation as we will see in the next lab.
+{: .note }
+The name of the flow is very important for the APIkit router to be able to route the request to the appropriate flow - you don’t want to change these.
+
+When APIkit detects example data in the response of a method in the RAML it inserts a **Dataweave Transform Message** into the flow which returns the static response specified by the example data reference.
+
+The static response returned by the auto-generated **Dataweave Transform Message** allows you to test the API as a stub immediately after generation. Obviously these flows can be enhanced to provide more advanced mock services as well as evolve them into full API implementation as we will see in the next lab.
 
 
 
@@ -198,7 +203,7 @@ This flow confirms the items to purchase in a users shopping cart.
 
     ![]({{ page.assets }}module2_lab1_step2_4_browser_apikit_console_tryit.png)
 
-7. Then tick the **Show optional parameters** and fill them in as below and click **SEND**.
+7. Now tick the **Show optional parameters** (if disabled), fill any parameter with any value and click on **SEND** again.
 
     ![]({{ page.assets }}module2_lab1_step2_5_apikit_console_get_request.png)
 
@@ -237,4 +242,4 @@ It is important to note that the implementation of an API is a real MuleSoft app
 
 **Congratulations! You have completed Lab 1.**
 
-Please proceed to [Lab 2](./lab-2){: .btn .btn-blue  .mr-2  }
+Please proceed to [Lab 2](./lab-2)

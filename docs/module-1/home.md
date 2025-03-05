@@ -23,10 +23,4 @@ API discovery and collaboration is provided by **Anypoint Exchange** and simplif
 
 The first module of the workshop will focus on how to use **Anypoint Design Center** and **Anypoint Exchange** to design, document, publish, and discover the features of a modern API.
 
-The 3 labs in this unit are:
-
-- Lab 1: Search for an API in Exchange
-- Lab 2: Design the Omni-Channel API
-- Lab 3: Publish the Omni-Channel API to Exchange
-
-Please proceed to [Lab 1](./lab-1){: .btn .btn-blue  .mr-2  }
+Please proceed to [Lab 1](./lab-1)

@@ -34,24 +34,25 @@ In this step we will create a new Mule application in Anypoint Studio from the O
 
 3. Give the project the name order-api
 
-4. Select the **Mule Server 4.4.0 EE (or latest version available)**.
+4. Select the **Mule Server 4.7.2 EE (or latest version available)**.
 
-5. Under Import a Publish API we are going to import the RAML Spec from Exchange. Click on module9 lab1 plus button and select from Exchange
+5. Under **Import a published API** we are going to import the RAML Spec from Exchange. Click on the "+" button and select from Exchange
 
     ![]({{ page.assets }}module9_lab1_new_mule_api_project.png)
 
-6. Once you clicked there, you will see a new window. If you don’t see any username. You need to login to the Anypoint Platform. So click on the **Add Account** button.
+6. Once you clicked there, you will see a new window. If you don’t see any username. You need to login to the Anypoint Platform. So click on the **Add Account** button and follow the instructions as done in Module 2.
 
-7. This is the same thing you did in the last module. You will see a list with all the APIs Select **Order API** (check that the publisher is ALC Workshop) and press **Add**.
+7. This is the same thing you did in the last module. Search and select **Order API** 
 
     ![]({{ page.assets }}module9_lab1_as_dc_select_proj.png)
 
-    {: .warn }
+    {: .warning }
     Be sure when you select the **Order API**. Validate that the **Publisher** has the name of the workshop business group.
 
 8. Press Finish​.
 
-9. Check everything is fine. Be sure that the **Scaffold flows from these API Specifications** is checked.
+9. Check everything is fine. Be sure that the **Scaffold flows from these API Specifications** is checked and press on **Finish**
+
     ![]({{ page.assets }}module9_lab1_check_create.png)
 
 10. APIkit creates your new Anypoint Studio project with a generated implementation based on your API specification. The generated configuration implements the inbound HTTP listener, as well as, all the resources, request/response data type metadata, among other things.

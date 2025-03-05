@@ -18,14 +18,27 @@ In this lab we’ll deploy the complete Omni Channel API from Lab 2 to the [Clou
 {: .note}
 CloudHub is the world’s first integration Platform as a Service (iPaaS). CloudHub is built on top of Mule, the most widely used integration platform. CloudHub lets you manage applications in the cloud and manage servers located in your organization.
 
+## Step 0: Update dependencies
+Before we deploy our application, we need to make sure that the application is using the latest components from exchange.
+
+1. Right click on your application and select **Manage Dependencies** --> **Manage Modules**
+
+    ![]({{ page.assets }}module-2-lab3-manage-dependencies-menu.png)
+
+2. For each module, select the module and click on Update Version:
+
+  ![]({{ page.assets }}module-2-lab3-update-module.png)
+
+3. Once all modules have been updated to the latest, click on **Apply and Close**
+
 ## Step 1: Deploy the Complete Omni Channel API to Cloudhub
 Let’s begin:
 
-1. Open your pom.xml file, select the Source tab and update your `<artifactId>` (line 6) adding your initials at the beggining of the name. It should look like this: 'egl-omni-channel-api'
+1. Open your `pom.xml` file, select the Source tab and update your `<artifactId>` (line 6) adding your initials at the beggining of the name. It should look like this: '`egl-omni-channel-api`'
     ![]({{ page.assets }}module2_lab3_update_pom1.png)
     ![]({{ page.assets }}module2_lab3_update_pom.png)
 
-2. Now let’s deploy it to Cloudhub. **Right click on the project name → Anypoint Platform → Deploy to Cloud**.
+2. Now let’s deploy it to Cloudhub. **Right click on the project name → Anypoint Platform → Deploy to CloudHub**.
     ![]({{ page.assets }}module2_lab3_step1_1_deploy_to_cloudhub.png)
 
 3. If this is your first time deploying in this way, a popup menu asks you to provide your login credentials for Anypoint Platform. Studio stores your credentials and uses them automatically the next time you deploy to CloudHub.
@@ -36,7 +49,7 @@ Let’s begin:
 
     ![]({{ page.assets }}module2_lab3_step1_2_choose_environmentand_businessgroup.png)
 
-4. Now we need to specify application [(worker)](https://docs.mulesoft.com/cloudhub/cloudhub-architecture#cloudhub-workers) configuration for our API.
+4. Now we need to specify application configuration for our API.
 
     a. On the application name put **MyName-omni-channel-api**. You should see a green check if the name is available. If not, please use another name
 
@@ -45,9 +58,9 @@ Let’s begin:
 
     b. On **Deployment Target** leave "Cloudhub 2.0" with the corresponding region (regions might change depending on your location)
 
-    c. On **Runtime version** select **4.6.0 (or latest version available)**
+    c. On **Runtime version** select **4.9.1 (or latest version available)**
 
-    d. On **Worker Size** select **0.1 vCore**
+    d. On **Worker Size** select **Micro - 0.1 vCore** (not to be confused with Micro (Memory Intensive) which will provision a slightly bigger worker)
 
     {: .highlight}
     Leave the rest of the default values.
@@ -56,17 +69,25 @@ Let’s begin:
 
 5. Once the configuration is done, click on the **Deploy Application** button.
 
-6. Once the deployment is complete (it may take a few minutes), you can browse the API Console going to Runtime Manager and checking your deployed API and opening the domain. Then access the api console at `http://<username-omni-channel-api>.<region>.cloudhub.io/console/`.
-    ![]({{ page.assets }}module2_lab3_step1_3_deploy_runtime_manager.domain.png)
+6. Once the deployment is triggered in CloudHub (it may take a few minutes. Bigger workers take a shorte time to start up), click on Open in Browser button in the pop up that will open.
 
-    {: .note}
-    The Region may change depending on which Platform you are working US or EU.
+  ![]({{ page.assets }}module-2-lab3-deployment-popup.png)
 
-    In the previous example it would be something like [https://omni-channel-api-v1-egl-cawzkd.5sc6y6-4.usa-e2.cloudhub.io](https://omni-channel-api-v1-egl-cawzkd.5sc6y6-4.usa-e2.cloudhub.io).
+   You will be taken to Runtime Manager, where you will be able to manage your application(s). From Runtime Manager copy your application's Public Endpoint:
 
-    ![]({{ page.assets }}module2_lab3_step1_4_api_console.png)
+   ![]({{ page.assets }}module-2-lab3-pulbic-endpoint.png)
 
-    Now you have a fully functional **Omni Channel API** of your own.
+   Now in a browser window paste the Public Endpoint URL and apped `/console/` to it.
+
+   In the our example we have [https://nb-omni-channel-api-1s3mvo.5sc6y6-2.usa-e2.cloudhub.io/console/](https://nb-omni-channel-api-1s3mvo.5sc6y6-2.usa-e2.cloudhub.io/console/).
+
+   {: .note}
+   The Region may change depending on which Platform you are working US or EU.
+
+
+   ![]({{ page.assets }}module2_lab3_step1_4_api_console.png)
+
+   Now you have a fully functional **Omni Channel API** of your own.
 
 ## Step 2: Test the API from a Mobile Application
 
@@ -84,7 +105,7 @@ You can access the mobile application through:
 
     ![]({{ page.assets }}module2_lab3_mobile_login.png)
 
-3. To connect this to your Mobile Experience API, go to Settings and add the Cloudhub URL for your Mobile Experience API.
+3. To connect this to your Mobile Experience API, open the hamburger menu and go to Settings then add your Cloudhub URL for your Mobile Experience API we just deployed (do not include `/console`).
 
     ![]({{ page.assets }}module2_lab3_mobile_settings2.png)
 
@@ -104,4 +125,4 @@ Go Further:
 
 **Congratulations! You have completed Lab 3.**
 
-You can now proceed to the next optional [lab 4](./lab-4){: .btn .btn-blue  .mr-2  }
+You can now proceed to the next optional [lab 4](./lab-4)

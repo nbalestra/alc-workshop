@@ -25,32 +25,38 @@ As a result, many SOA-based initiatives were only able to partially achieve thei
 Let’s take a look at the process for publishing and documenting our reusable Omni Channel Experience API.
 
 ## Step 1: Complete the Omni Channel Experience API Specification
-Before we get started, make sure you are logged into the **Anypoint Platform** and viewing the **Anypoint Design Center** screen. You should have your "**<username> - Omni Channel Experience API**" open and visible. We have only defined a few resources and methods at this point and need to author the full API in order to complete the exercise. Rather than build it from scratch, we have the ability to import an API specification previously constructed for the workshop.
+Before we get started, make sure you are logged into the **Anypoint Platform** and viewing the **Anypoint Design Center** screen. You should have your "**\<username\> - Omni Channel Experience API**" open and visible. We have only defined a few resources and methods at this point and need to author the full API in order to complete the exercise. Rather than build it from scratch, we have the ability to import an API specification previously constructed for the workshop.
 
 1. Go to the Setup located at the top right corner.
 2. In the drop down menu select **Import from Exchange**
+
     ![Import from Exchange]({{ page.assets }}module1_lab3_import_from_exchange.png "Import from Exchange")
 
-3. Look for Omni Channel Experience API.
+3. In the search box type **Omni Channel Experience API**.
 4. Select **Omni Channel Experience API**
 5. Press **Import asset**
+
     ![Import Asset]({{ page.assets }}module1_lab3_choose_omni_channel_exp.png "Choose Omni Channel")
 
-    Is going to ask you to replace the root file.
+    You will be asked whether you want to replace the root file.
 
 6. Choose **Yes**
+
     ![Root File]({{ page.assets }}module1_lab3_root_file.png "Root File")
 
     {: .note}
     Anypoint Design Center supports both RAML and Open API specification (OAS) languages when importing an API specification. OAS is a common format popularized by open-source Swagger tools.
 
 7. Delete the RAML file **{Your Anypoint Username}-omni-channel-experience-api.raml** from your project explorer that we were previously editing. We no longer need that file since the API we just imported replaces that specification. Click the "ellipsis" menu next to your file and then click "delete":
+
     ![Delete RAML]({{ page.assets }}module1_lab3_ellipsis_delete.png "Delete RAML")
 
 8. Delete the _omni-channel-experience-api.raml_ file.
+
     ![Delete RAML 2]({{ page.assets }}module1_lab3_ellipsis_delete2.png "Delete RAML 2")
 
 9. Select the new RAML file we imported. You should see the following complete API specification:
+
     ![Full API]({{ page.assets }}module1_lab3_full_api.png "Full API")
 
     {: .note}
@@ -59,17 +65,20 @@ Before we get started, make sure you are logged into the **Anypoint Platform** a
 This fully formed API specification is ready to be published! Feel free to explore the API using the mocking service if desired.
 
 {: .note}
-The full API specification designates that a client_id and client_secret are required to use the API properly. We have not secured our API yet and will cover that in a future module. If you are trying to test the API using the **mocking service** then you can enter any value for these parameters and it will still work properly.
+The full API specification designates that a `client_id` and `client_secret` are required to use the API properly. We have not secured our API yet and will cover that in a future module. If you are trying to test the API using the **mocking service** then you can enter any value for these parameters and it will still work properly.
 
 ## Step 2: Publish Your API to Anypoint Exchange
 
 1. Click on the **Publish** button to publish to Exchange.
+
     ![DC Publish]({{ page.assets }}module1_lab3_design_center_publish.png "DC Publish")
 
 2. A popup window to capture the attributes that you want to publish to Exchange will appear. Most of these fields will be pre-populated and the RAML will be verified to ensure that there are no errors. Complete the **Asset version** field with `1.0.0`.
+
     ![Tags]({{ page.assets }}module1_lab3_publish_exchange_tags.png "Tags")
 
 3. Click the "Publish to Exchange" button when you have finished reviewing the API name and version information. We have now published our Omni Channel Experience API to **Anypoint Exchange** for other developers to discover and consume!
+
     ![Publish Exchange]({{ page.assets }}module1_lab3_publish_exchange_success.png "Publish to Exchange")
 
 Each time you publish an API Specification you will generate two assets:
@@ -80,13 +89,17 @@ Each time you publish an API Specification you will generate two assets:
 As demonstrated in Step 2, publishing your API to exchange is as easy as a few clicks. However, Exchange has really only just captured the basic attributes and documentation for your API at this point. Ensuring that your API is easy to find and "self-service ready" is your responsibility as an API designer. Let’s find our API in Exchange and add more to our API documentation.
 
 1. Navigate to Exchange from the "hamburger menu" at the top left corner of Design Center.
+
     ![Navigate to Exchange]({{ page.assets }}module1_lab3_navigate_to_exchange.png "Navigate to Exchange")
+
     ![Navigate to Exchange 2]({{ page.assets }}module1_lab3_navigate_to_exchange2.png "Navigate to Exchange 2")
 
 2. Use the search bar to find your API if it is not already visible in the list of Exchange assets. Click on your API once you find it:
+
     ![Exchange Select Asset]({{ page.assets }}module1_lab3_exchange_assets_select.png "Exchange Select Asset")
 
 3. Click on the "Edit documentation" button to launch edit mode.
+
     ![Edit asset]({{ page.assets }}module1_lab3_exchange_edit.png "Edit asset")
 
 4. Exchange assets are documented using "markdown" language. Markdown language is a format-agnostic syntax used for creating documentation independent of how it will be rendered (i.e. HTML, PDF, text, etc). It is used by popular applications like GitHub as the standard way to create software documentation. For more information on markdown please refer to:
@@ -114,13 +127,14 @@ As demonstrated in Step 2, publishing your API to exchange is as easy as a few c
 5. Click on the "Save" button. Your draft of the API documentation is saved but not published until you formally "Publish" the final updates to Exchange, so feel free to save multiple drafts as you create your documentation.
     ![Editor Draft]({{ page.assets }}module1_lab3_exchange_editor_draft_page.png "Editor Draft")
 
-    - You can press Publish, Discard , Edit or View ublished.
+    - You can press Publish, Discard , Edit or View Published.
         - Discard - Throw away changes
         - View Published - View published documentation
         - Edit - Lets you edit the content
         - Publish - Publish documentation changes to exchange
 
 6. Press the **Publish** button. Your documentation changes are now visible on Exchange!
+
     ![Editor Final Page]({{ page.assets }}module1_lab3_exchange_editor_final_page.png "Editor Final Page")
 
     Exchange documentation can be comprised of multiple pages. So far we have just created the home page for our API.
@@ -133,9 +147,11 @@ Like in Design Center, in Exchange you can look at the **API Summary**. The **AP
 We are going to see how it can be done.
 
 1. Go to the **API Summary**
+
     ![API Summary]({{ page.assets }}module1_lab4_exchange_api_summary.png "API Summary")
 
-2. Press /products/search `[GET]`
+2. Press **/products/search** --> `[GET]`
+
     ![Product Search]({{ page.assets }}module1_lab4_exchange_product_search.png "Product Search")
 
 3. On the right side of the panel you will see the **GET** method to be called.
@@ -145,17 +161,20 @@ We are going to see how it can be done.
     You can see the **Parameters, Headers** and how they are filled.
 
     In the **Parameters** tab you can see all the optional parameters that can be send.
+
     ![Product Search]({{ page.assets }}module1_lab4_product_search.png "Product Search")
 
 4. Press **SEND** and see what happens.
+
     ![Product Search Response]({{ page.assets }}module1_lab4_exchange_product_search_response.png "Product Search Response")
 
     - You can see the mock response with the following information:
     
         The http response and the response time.
+
         ![HTTP Response]({{ page.assets }}module1_lab4_http_response.png "HTTP Response")
     
-    - Under the ![3 dots](../../assets/images/module1/icons_3_dots_white.png "3 dots") you can find:
+    - Under the <img src="../../assets/images/module1/icons_3_dots_white.png" width="25px"> you can find:
 
         ![Message icon]({{ page.assets }}module1_lab4_message_icons.png "Message Icons")
     

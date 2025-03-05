@@ -150,7 +150,7 @@ In this step, you will create an API and design it using the Anypoint Design Cen
 
 5. Set the following values in the Add API form:
 
-    - Project name: **<username> - Omni Channel Experience API**.
+    - Project name: **\<username\> - Omni Channel Experience API**.
     - How do you want to draft the API Spec: Select Guide me through it radio button.
 
     {: .note}
@@ -171,7 +171,7 @@ In order to provide order handling functionality for the e-commerce application,
 
 1. Let’s add some general details about the API.
 
-    - Name the API by setting the title to **<username> Omni Channel Experience API**.
+    - Name the API by setting the title to **\<username\> Omni Channel Experience API**.
     - Since this is our first design let’s designate this API as version 1.0. Set version to 1.0
     - Set the media type to application/json.
     - Most API specifications will designate an API endpoint Base URI. This tells the API consumer where they will access the API. Set the URI to [http://localhost:8081/api](http://localhost:8081/api)
@@ -218,7 +218,7 @@ In the previous step we created an Order collection resource and POST method to 
     {: .warning}
     Do Not Copy/Paste from a PDF document!
 7. Under “Example”, click the Edit tab and copy/paste the following JSON code
-    ```js
+    ```json
     {
         "order_id": "order_22",
         "tracking_code": "12310391209318",
@@ -252,7 +252,8 @@ In the previous step we created an Order collection resource and POST method to 
 
 # Step 5: Switching between RAML and OAS view
 Inside the Anypoint Platform you can work with RAML and OAS seamlessly. You can check that going to the right panel, where the specification code is shown, and selecting on the bottom the OAS tab.
-    ![OAS Console]({{ page.assets }}module1_lab2_design_center_oas_console.gif "OAS Console")
+
+![OAS Console]({{ page.assets }}module1_lab2_design_center_oas_console.gif "OAS Console")
 
 {: .note}
 Mulesoft supports OAS 3.0. The specification can be either a YAML (.yaml) or JSON (.json).
@@ -265,6 +266,7 @@ In the Step 3 and Step 4 of this lab we created resources and methods for our Om
 So first we need to change the view.
 
 1. Click the Edit RAML button to go to the RAML Editor mode and confirm that you will be using the code editor instead of the visual editor
+
     ![Edit RAML Button]({{ page.assets }}module1_lab2_edit_raml_button.png "Edit RAML Button")
 
     {: .note}
@@ -273,6 +275,7 @@ So first we need to change the view.
 2. On the popup window, please select **Yes, send me to the code editor**.
 
 3. Press **Continue**
+
     ![RAML Confirmation]({{ page.assets }}module1_lab2_raml_confirmation.png "RAML Confirmation")
     
     You should see the RAML editor.
@@ -319,7 +322,7 @@ First we are going to enable the mocking service for internal use.
 
     ![Mocking Service Default]({{ page.assets }}module1_lab2_mocking_service_default.gif "Mocking Service Default")
 
-    You could eventually make the link public so the link can be accessed by someone outside the Anypint Organization.    
+    You could optionally make the link public so the link can be accessed by someone outside the Anypint Organization.    
 
 # Step 8: Reusing an Asset from Exchange
 
@@ -328,6 +331,7 @@ In the Step 4 of this lab we created a GET method for our Omni Channel Experienc
 1. Let’s provide an example of what the e-commerce application should expect when invoking the `GET` method on the `/order/{order_id)` resource. There are several ways to declare the example response in RAML, but lets see how easy it is to use Exchange to search for and incorporate a **RAML fragment** into our project.
 
     Click on the "dependency icon" on the left hand side of the API Designer:
+
     ![Dependency Icon]({{ page.assets }}module1_lab2_design_center_dependency_icon.png "Dependency Icon")
 
 2. You should now see the project dependency section of your API specification. RAML allows API designers to not only define the resources, methods, and attributes of the API, but it also allows you to reference external files containing fragments of RAML. These fragments can define commonly used data definition, examples, traits, and resourceTypes, making the API design process easier and more consistent across the organization.
@@ -337,45 +341,55 @@ In the Step 4 of this lab we created a GET method for our Omni Channel Experienc
     ![Add Dependency]({{ page.assets }}module1_lab2_design_center_dependency_add.png "Add Dependency")
 
 4. You should see a list of RAML fragments.
+
     ![List Dependencies]({{ page.assets }}module1_lab2_design_center_dependency_list.png "List Dependencies")
 
 5. For the purposes of this workshop we have created a simple example of an order in Exchange. Use the search bar to find the asset titled **Order Instance Example** and add it to your project:
+
     ![Search Dependency]({{ page.assets }}module1_lab2_design_center_dependency_search.png "Search dependency")
 
 6. Add the RAML fragment to your project by ticking the checkbox and pressing the **Add** button.
+
     ![Select Dependency]({{ page.assets }}module1_lab2_design_center_dependency_select.png "Select Dependency")
 
 7. The API Designer will now pull the **Order Instance Example** RAML fragment from Exchange.
 
 8. To see these files, click on the **Files** icon at the top left of the API Designer:
+
     ![Files]({{ page.assets }}module1_lab2_design_center_files.png "Files")
+
 9. Expand **exchange_modules** and select **order-instance-example.raml**. Your Project Explorer should look something like this:
+
     ![Files Example]({{ page.assets }}module1_lab2_design_center_files_example.png "Files Example")
+
     The above RAML fragment on the right defines an example of what an Order instance might look like. By defining this example using a format-neutral language like RAML (instead of a JSON object which is what is expected to be returned) we give the API designer flexibility to change the method’s data format (i.e. from JSON to XML) and still be able to create a valid example.
 
 10. Remove the hardcoded example we wrote on Step 4
+
     ![Remove Text]({{ page.assets }}module1_lab2_remove_text.png "Remove Text")
-    At this point we have only referenced the RAML fragment from our project. The last step is to designate the Order example as the **example**: data for the /order/{order_id}: resource.
+
+    At this point we have only referenced the RAML fragment from our project. The last step is to designate the Order example as the `example:` data for the `/order/{order_id}:` resource.
 
     Let’s start by copying the Resource complete path into the clipboard.
 
-11. Click on the ![Icon 3](../../assets/images/module1/icons_3_dots_white.png) white menu:
+11. Click on the <img src="../../assets/images/module1/icons_3_dots_white.png" width="25px"> menu next to **order-instance-example.raml** and select **Copy path**:
+
     ![Ellipsis]({{ page.assets }}module1_lab2_design_center_files_ellipsis.png "Ellipsis")
+
     ![Ellipsis 2]({{ page.assets }}module1_lab2_design_center_files_ellipsis2.png "Ellipsis")
 
-12. Now, return to the bottom of our main API specification file.
-
-    {: .highlight}
-    example: !include
+12. Now, return to the bottom of our main API specification file where you removed the hardcoded example and next to `example:` type `!include`.
 
     ![Order API]({{ page.assets }}module1_lab2_design_center_files_order_api.png "Order API")
 
     The **!include** directive allows you to create a relative path reference to other files in your RAMl project.
 
-13. Paste the pathname next to the **!include** directive in the RAML file.
+13. Paste the pathname you copied earlier next to the **!include** directive in the RAML file.
+
     ![API Path]({{ page.assets }}module1_lab2_design_center_files_order_api_path.png "API Path")
 
 14. Take a look at the API Summary. You could see the Get resources under `/{order_id}`
+
     ![API Summary]({{ page.assets }}module1_lab2_api_summary.png "API Summary")
 
 15. Click on the **Get** resource and you will see the description:
@@ -420,5 +434,5 @@ Also review the following free ebooks on API design.
 
 **Congratulations! You have completed Lab 2.**
 
-Please proceed to [Lab 3](./lab-3){: .btn .btn-blue  .mr-2  }
+Please proceed to [Lab 3](./lab-3)
 

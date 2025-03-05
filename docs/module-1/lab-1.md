@@ -64,7 +64,7 @@ This first lab will focus on using **Anypoint Exchange** to search for API’s a
     
     **Anypoint Exchange** supports keyword searching to find the API you are looking for. However, **Anypoint Exchange** can be used as a discovery tool for more than just API’s. **Anypoint Exchange** is the enterprise repository for the following types of reusable software assets.
 
-4. Click on the **All types** drop down next to the search field to view the different search types.
+4. Click on the **Any types** drop down next to the search field to view the different search types.
     ![Search Types]({{ page.assets }}module1_lab1_exchangesearchtypes.png "Search Types")
 
     - **Connectors** - Packaged connectivity to an endpoint developed and deployed on MuleSoft’s Anypoint Platform with third-party APIs and standard integration protocols.
@@ -109,7 +109,7 @@ This first lab will focus on using **Anypoint Exchange** to search for API’s a
 
     Exchange provides several new features to support and encourage discovery and collaboration.
 
-    First note the content in the portal to help you learn how to use the API. We will learn how to create this content latter. But for now, let’s do a quick survey of the key features of the Exchange portal:
+    First note the content in the portal to help you learn how to use the API. We will learn how to create this content later. But for now, let’s do a quick survey of the key features of the Exchange portal:
 
     ![API Full]({{ page.assets }}module1_lab1_apifull.png "API Full")
 
@@ -138,15 +138,19 @@ This first lab will focus on using **Anypoint Exchange** to search for API’s a
     - **Add Version**: Lets you create a new version.
 
     g. **Versions** It shows the different versions of the API. Much of this information is automatically generated during the design and development of the API.
+    
     - **Change Lifecycle State**: Lets you change the state of the version
+
     ![Lifecycle]({{ page.assets }}module1_lab1_lifecycle.png "Lifecycle")
-    - **Manage Versions**: Lets you change lifecycle state, crete a new version and download/delete/view in API Designer by clicking the <img src="../../assets/images/module1/icons_3_dots_white.png" width="30px"> icon
+    
+    - **Manage Versions**: Lets you change lifecycle state, crete a new version and download/delete/view in API Designer by clicking the <img src="../../assets/images/module1/icons_3_dots_white.png" width="25px"> icon
 
     ![Versions]({{ page.assets }}module1_lab1_manage_versions.png "Versions")
 
     h. **Ratings and Reviews** - New to Exchange, API users can review and comment on an API. This enables collaboration with the API owner and the ability to share experiences using the API that might help other API consumers.
+
     ![Reviews]({{ page.assets }}module1_lab1_rating_reviews.png "Reviews")
 
     Let’s explore how to design an API in the next lab.
 
-Please proceed to [Lab 2](./lab-2){: .btn .btn-blue  .mr-2  }
+Please proceed to [Lab 2](./lab-2)

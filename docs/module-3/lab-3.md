@@ -49,7 +49,7 @@ In [Lab 2](module-3-ws-lab-2.md) we have formatted our inbound and outbound mess
 
     ![]({{ page.assets }}module9_lab3_as_debugscreen.png)
 
-8. Test the application using the **APIKit Console** link on the lower right. Click on the Basepoint URL: Link. This should open up a browser window to the API Console.
+8. Test the application using the **APIKit Console** tab that will appear next to the Console tab. Click on **Open console** button. This should open up a browser window to the API Console.
 The console will look like this in the browser.
 
     ![]({{ page.assets }}module9_lab1_as_apiconsole.png)
