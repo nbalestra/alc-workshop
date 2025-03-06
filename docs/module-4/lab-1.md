@@ -24,7 +24,7 @@ In this lab, we will create the skeleton implementation of our Product API that 
 
 3. Give the project the name **product-api**
 
-4. Select the **4.4.0 EE (or latest version available)**.
+4. Select the **4.7.2 EE (or latest version available)**.
 
 5. Under **Import a published API** we are going to import the RAML Spec from Exchange. Click on <img src="{{ page.assets }}plus_button.png" width="25px"> and select **from Exchange**
 
@@ -32,27 +32,27 @@ In this lab, we will create the skeleton implementation of our Product API that 
 
 6. Once you clicked there, you will see a new window. If you don’t see any username. You need to login to the Anypoiint Platform. So click on the **Add Account** button. You will see a list with all the APIs
 
-7. Select **Product API** and press **Add**.
+7. Search for and select the **Product API** whose Publisher is the name of the workshop business group, then press  **Add**.
 
     ![]({{ page.assets }}lab1_product_api_for_database.png)
 
-    {: .warn }
+    {: .warning }
     Be sure when you select the **Product API**. Validate that the **Publisher** has the name of the workshop business group.
 
-8. Press Finish
+8. Press **Finish**
 
-9. Check everything is fine. Be sure that the **Scaffold flows from these API Specifications** is checked.
+9. Check everything is fine. Be sure that the **Scaffold flows from these API Specifications** is checked and press **Finish** again.
 
     ![]({{ page.assets }}ab1_check_create.png)
 
-10. APIkit creates your new Anypoint Studio project with a generated implementation based on your API specification. The generated configuration implements the inbound HTTP listener, as well as, all the resources, request/response data type metadata, among other things.
+10. **APIkit** creates your new Anypoint Studio project with a generated implementation based on your API specification. The generated configuration implements the inbound HTTP listener, as well as, all the resources, request/response data type metadata, among other things.
 
     ![]({{ page.assets }}lab1_new_project.png)
 
 ## Step2: Run the API
 To check the API, let’s run it within Studio first.
 
-1. Right click **api-products** in the Package Explorer view. Select **Run As > Mule Application**.
+1. Right click on **product-api** in the Package Explorer view. Select **Run As > Mule Application**.
 
     ![]({{ page.assets }}lab1_run_mule_app.png)
 
@@ -64,7 +64,7 @@ To check the API, let’s run it within Studio first.
 
     ![]({{ page.assets }}lab1_api_console.png)
 
-    Click the **GET** tab and test the get products method.
+    Click the `/product` **GET** tab and test the get products method.
 
 4. In the Accept field complete with `application/json` in case is needed.
 

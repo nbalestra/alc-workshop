@@ -3,6 +3,9 @@
       position: relative;
       max-width: 70rem;
     }
+    .site-nav, .site-header, .site-footer {
+      width: 21.4rem;
+  }
   }
 
 .header {
@@ -10,4 +13,10 @@
     text-align: center;
     width: 100%;
     margin: 1rem 1rem 1rem 1rem;
+}
+
+@media (min-width: 66.5rem) {
+  .site-nav, .site-header, .site-footer {
+      width: 21.5rem;
+  }
 }

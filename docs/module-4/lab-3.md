@@ -71,7 +71,7 @@ The following instructions will guide you through the process:
     ```
 
     {: .warn }
-    The productNumber must be unique, so if this record has already been created, try setting a different random value, or ask you instructor to provide a value by querying the database directly to check for existing records.
+    The `productNumber` must be unique, so if this record has already been created, try setting a different random value, or ask you instructor to provide a value by querying the database directly to check for existing records.
 
 5. Set the endpoint to be [http://localhost:8081/api/product](http://localhost:8081/api/product), and add a `Content-Type` header with value `application/json`.
     
@@ -79,7 +79,7 @@ The following instructions will guide you through the process:
 
 6. Review the mock body of the operation, which in this case, contains the name, description, category, etc. of the product to be created, and click the Send button.
 
-7. If everything was successful, you should receive a 201 response code, and a response body that contains the new product ID.
+7. If everything was successful, you should receive a `201 - Created` response code, and a response body that contains the new product ID.
 
     **Take note of this ID**. We will use it in the following steps.
     
@@ -124,13 +124,13 @@ In this step you will use the MUnit for RAML feature to create a test for a spec
 
 The following instructions will guide you through the process.
 
-1. Inside api-product.xml file, right click on the "APIKit Router" component and select "Create Test Suite for api.xml from API Specification".
+1. Inside **api-product.xml** file, right click on the "APIKit Router" component and select "Create Test Suite for api.xml from API Specification".
 
     ![]({{ page.assets }}lab3_munit_generate.png)
 
     A new *sapi-products-db-apikit-test.xml* file will be generated within the folder *src/test/munit* and a viewer will open.
 
-    Concentrate on the test flow called "get:/product:api-config-200-application/json-FlowTest". We are going to mock the Database invocation, so you do not have to depend on external resources.
+    Let's focus on the test flow called "`get:/product:api-config-200-application/json-FlowTest`". We are going to mock the Database invocation, so you do not have to depend on external resources.
 
 2. Go to the palette and select the **Mock When** operation from the **MUnit Tools** component.
 
@@ -146,56 +146,59 @@ The following instructions will guide you through the process.
 
 5. In the **General** Panel complete with the following data
 
-- **Processor**: `db:select`
+    - **Processor**: `db:select`
 
-- In the **Then return** section, select **Payload** tab
+    - In the **Then return** section, select **Payload** tab
 
 6. Complete the field **Value** with this representation of a product simulating the Database response (press `function` button first):
 
     ```
-        #[
-            [{
-                id: 1,
-                name: "ELMO",
-                description: "Playskool sesame street play all day Elmo",
-                product_number: "UUID34234923934293",
-                manufactured: true,
-                safety_stock_level: 540,
-                standard_cost: 78,
-                list_price: 99.9,
-                size: "200x300",
-                size_unit_measure_code: "in",
-                weight_unit_measure_code: "gr",
-                weight: 400,
-                days_to_manufacture: 10,
-                categories: "playskool, sesame street",
-                stock: 2800,
-                colors: "blue, red, green",
-                images: "/wcsstore/HTSStorefrontAssetStore/Attachment/HomePage/Product_eSpots/Play-All-Day-Elmo.png",
-                created_date: now(),
-                modified_date: now()
-            }, {
-                id: 2,
-                name: "ELMO",
-                description: "Playskool sesame street play all day Elmo",
-                product_number: "UUID34234923934293",
-                manufactured: true,
-                safety_stock_level: 540,
-                standard_cost: 78,
-                list_price: 99.9,
-                size: "200x300",
-                size_unit_measure_code: "in",
-                weight_unit_measure_code: "gr",
-                weight: 400,
-                days_to_manufacture: 10,
-                categories: "playskool, sesame street",
-                stock: 2800,
-                colors: "blue, red, green",
-                images: "/wcssatore/HTSStorefrontAssetStore/Attachment/HomePage/Product_eSpots/Play-All-Day-Elmo.png",
-                created_date: now(),
-                modified_date: now()
-            }]
-            ]
+    %dw 2.0
+    output application/json
+    ---
+    
+    [{
+        id: 1,
+        name: "ELMO",
+        description: "Playskool sesame street play all day Elmo",
+        product_number: "UUID34234923934293",
+        manufactured: true,
+        safety_stock_level: 540,
+        standard_cost: 78,
+        list_price: 99.9,
+        size: "200x300",
+        size_unit_measure_code: "in",
+        weight_unit_measure_code: "gr",
+        weight: 400,
+        days_to_manufacture: 10,
+        categories: "playskool, sesame street",
+        stock: 2800,
+        colors: "blue, red, green",
+        images: "/wcsstore/HTSStorefrontAssetStore/Attachment/HomePage/Product_eSpots/Play-All-Day-Elmo.png",
+        created_date: now(),
+        modified_date: now()
+    }, 
+    {
+        id: 2,
+        name: "ELMO",
+        description: "Playskool sesame street play all day Elmo",
+        product_number: "UUID34234923934293",
+        manufactured: true,
+        safety_stock_level: 540,
+        standard_cost: 78,
+        list_price: 99.9,
+        size: "200x300",
+        size_unit_measure_code: "in",
+        weight_unit_measure_code: "gr",
+        weight: 400,
+        days_to_manufacture: 10,
+        categories: "playskool, sesame street",
+        stock: 2800,
+        colors: "blue, red, green",
+        images: "/wcssatore/HTSStorefrontAssetStore/Attachment/HomePage/Product_eSpots/Play-All-Day-Elmo.png",
+        created_date: now(),
+        modified_date: now()
+    }]
     ```
 
 7. Now complete the field `Media-Type` with the value `application/java`

@@ -17,13 +17,13 @@ In Lab 2, you implemented the API. Maybe it happened you’ve got a 500 error tr
 ## Step 1: Add Try Scope
 The Try scope enables you to handle errors that may occur when attempting to execute any of the components inside the Try scope.
 
-In this case, the **Product Number** in a product, is unique. So when we do an insert we could get an error. We are going to throw a `409` status code with the details of the error.
+In this case, the **Product Number** in a product, is unique. So when we do an insert we could get an error. We are going to throw a `409` status code with the details of the error. Head to the `post:\product` flow.
 
 1. Go to the palette and search for the **Try** component.
 
-2. Insert the Try component component at the beginning of the post flow
+2. Insert the Try component component after the Set Variable component
 
-3. Move the insert component inside. You should see something similar to this
+3. Move the insert component inside the Try component. You should see something similar to this
 
     ![]({{ page.assets }}lab2_try_flow.png)
 
@@ -67,9 +67,9 @@ In this step, we are going to raise a new exception with the `DB:QUERY_EXECUTION
     ![]({{ page.assets }}lab2_raise_error_config.png)
 
 ## Step 4: Handle a new Error
-Now we need to go to the API Kit Error Handling and add a new On Error Propagate Handler to return 409.
+Now we need to go to the APIKit Error Handling and add a new **On Error Propagate** Handler to return `409`.
 
-1. Go to the **Error Handling** in the `product-api-main` flow and add a new **On Error Propagate Handler**
+1. Go to the **Error Handling** in the `api-main` flow and add a new **On Error Propagate Handler**
 
 2. Click inside and configure `APP:CONFLICT` in **Type**.
 
@@ -82,10 +82,10 @@ Now we need to go to the API Kit Error Handling and add a new On Error Propagate
 4. In the payload configuration we are going to return the error description, so copy and paste the following script:
 
     ```
-        %dw 2.0
-        output application/json
-        ---
-        {message: error.description}
+    %dw 2.0
+    output application/json
+    ---
+    {message: error.description}
     ```
 
     ![]({{ page.assets }}lab2_error_desc_transform.png)
@@ -98,7 +98,7 @@ Now we need to go to the API Kit Error Handling and add a new On Error Propagate
 
     ![]({{ page.assets }}lab2_add_variable_menu.png)
 
-7. Write `409` in the script box.
+7. Remove the existing content and simply write `409` in the script box.
 
     ![]({{ page.assets }}lab2_add_variable_output.png)
 
