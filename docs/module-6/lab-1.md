@@ -34,31 +34,30 @@ In order for our agent UI to work, we need to deploy an API that exposes an endp
 2. Once you are in API Designer, copy and paste this RAML API Specification:
 
     ```yaml
-        #%RAML 1.0
-        title: AI Agent
-        mediaType:
-          - application/json
-        version: v.10
-        protocols:
-          - HTTPS
-        /chat:
-          post:
-            body:
-              description: Query the customer will ask about your products or their order status.
-              properties:
-                prompt:
-                  example: What are my orders? My Customer ID is aaabbb1234
-                  type: string
-            responses:
-              "200":
-                description: Response returned by the AI Agent
-                body:
-                  description: The response returned by your AI Agent
-                  properties:
-                    response:
-                      example: These are your orders
-                      type: string
-
+    #%RAML 1.0
+    title: AI Agent
+    mediaType:
+        - application/json
+    version: v.10
+    protocols:
+      - HTTPS
+    /chat:
+       post:
+         body:
+           description: Query the customer will ask about your products or their order status.
+           properties:
+             prompt:
+               example: What are my orders? My Customer ID is aaabbb1234
+               type: string
+         responses:
+            "200":
+              description: Response returned by the AI Agent
+              body:
+                description: The response returned by your AI Agent
+                properties:
+                  response:
+                    example: These are your orders
+                    type: string
     ```
 
 3. You can now publish the API to Exchange, as shown in the animation above.
