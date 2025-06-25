@@ -132,7 +132,7 @@ Similarly to what you have already done in Module 2, we will create an API scaff
 8. We now need to update the previous file with the host name of the orders API that the connector will invoke to ground the customer's prompt. 
 
     {: .note}
-    The API-Led workshop Anypoint environment already has a fully implemented version of the Order API which, among others, provides an endpoint to get all the orders given a customer ID. This implementation doesn't not connect to any backend and therefore you can pass the API any value as customerId. 
+    The API-Led workshop Anypoint environment already has a mok implementation of the Order API which, among others, provides an endpoint to get all the orders given a customer ID. This implementation doesn not connect to any backend and therefore you can pass the API any value as customerId. 
 
     - Login into Anypoint Platform 
     - Head to Runtime Manager
