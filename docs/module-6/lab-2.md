@@ -33,7 +33,7 @@ Now that we have tested our agent within Studio, is time to deploy it to Anypoin
 
 4. If prompted choose the Sandbox environment and select your application
 
-5. Copy your application's endpoint:
+5. Make sure to click on your application name and copy your application's endpoint:
 
     ![]({{ page.assets }}lab2-copy-endpoint.png)
 
@@ -41,7 +41,7 @@ Now that we have tested our agent within Studio, is time to deploy it to Anypoin
 
 6. Now open the [Agent UI application](https://tinyurl.com/alc-ai-agent)
 
-7. Paste your public endpoint in the **Agent UR** text box that you will find at the top of the page
+7. Paste your public endpoint in the **Agent URL** text box that you will find at the top of the page
 
     ![]({{ page.assets }}lab2-url-text-box.png)
     
