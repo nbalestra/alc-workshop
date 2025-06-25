@@ -208,7 +208,7 @@ We can test our agents directly in Studio before deploying it. We will use the e
 
     ![]({{ page.assets }}module-4-lab-1-agent-post.png)
 
-4. In the Body section, type "**What are my orders? My Customer ID is 23423434**" and click on **Send**
+4. Click on the **Try It** button on the top right and in the Body section, type "**What are my orders? My Customer ID is 23423434**" and click on **Send**
 
     ![]({{ page.assets }}lab1-prompt-body.png)
 
