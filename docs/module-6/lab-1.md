@@ -33,32 +33,32 @@ In order for our agent UI to work, we need to deploy an API that exposes an endp
 
 2. Once you are in API Designer, copy and paste this RAML API Specification:
 
-    ```yaml
-    #%RAML 1.0
-    title: AI Agent
-    mediaType:
-        - application/json
-    version: v.1
-    protocols:
-      - HTTPS
-    /chat:
-       post:
-         body:
-           description: Query the customer will ask about your products or their order status.
-           properties:
-             prompt:
-               example: What are my orders? My Customer ID is aaabbb1234
-               type: string
-         responses:
-            "200":
-              description: Response returned by the AI Agent
-              body:
-                description: The response returned by your AI Agent
-                properties:
-                  response:
-                    example: These are your orders
-                    type: string
-    ```
+   ```yaml
+   #%RAML 1.0
+   title: AI Agent
+   mediaType:
+       - application/json
+   version: v.1
+   protocols:
+     - HTTPS
+   /chat:
+      post:
+        body:
+          description: Query the customer will ask about your products or their order status.
+          properties:
+            prompt:
+              example: What are my orders? My Customer ID is aaabbb1234
+              type: string
+        responses:
+           "200":
+             description: Response returned by the AI Agent
+             body:
+               description: The response returned by your AI Agent
+               properties:
+                 response:
+                   example: These are your orders
+                   type: string
+   ```
 
 3. You can now publish the API to Exchange, as shown in the animation above.
 
@@ -110,23 +110,23 @@ Similarly to what you have already done in Module 2, we will create an API scaff
     Once created paste the following content (which we'll need to tweak a bit):
 
     ```json
-        [
-            {
-                "action": "Execute GET requests for API endpoints.",
-                "url": "<CHANGE THIS>/api/orders?customerId={customerId}",
-                "name": "Retrieve orders",
-                "method": "GET",
-                "example-payload": "{}",
-                "headers" : "",
-                "query": [
-                    "What are my order",
-                    "List all the open orders",
-                    "Show a list of all my orders",
-                    "Show me the list of my orders. My ID is assdf-342a-sdfa"
-                ],
-                "description": "Retrieve the list of orders for a given customer. If the ustomer ID is not known ask the customer to provide their ID. Once the ID is known replace {customerId} in the URL with the actual customer ID This action applies whenever users' intent is 'Orders overview', 'My orders', 'All orders'."
-                }
-            ]
+    [
+        {
+            "action": "Execute GET requests for API endpoints.",
+            "url": "<CHANGE THIS>/api/orders?customerId={customerId}",
+            "name": "Retrieve orders",
+            "method": "GET",
+            "example-payload": "{}",
+            "headers" : "",
+            "query": [
+                "What are my order",
+                "List all the open orders",
+                "Show a list of all my orders",
+                "Show me the list of my orders. My ID is assdf-342a-sdfa"
+            ],
+            "description": "Retrieve the list of orders for a given customer. If the ustomer ID is not known ask the customer to provide their ID. Once the ID is known replace {customerId} in the URL with the actual customer ID This action applies whenever users' intent is 'Orders overview', 'My orders', 'All orders'."
+        }
+    ]
     ```
 
 8. We now need to update the previous file with the host name of the orders API that the connector will invoke to ground the customer's prompt. 
