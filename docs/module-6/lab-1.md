@@ -38,7 +38,7 @@ In order for our agent UI to work, we need to deploy an API that exposes an endp
     title: AI Agent
     mediaType:
         - application/json
-    version: v.10
+    version: v.1
     protocols:
       - HTTPS
     /chat:
